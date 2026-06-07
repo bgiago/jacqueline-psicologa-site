@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 import { useInView } from "framer-motion";
@@ -76,7 +76,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
 export default function FAQ() {
   return (
     <section id="duvidas" style={{ padding: "clamp(5rem,10vw,8rem) 0", background: "var(--color-surface)" }}>
-      <div className="container">
+      <div className="wrap">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

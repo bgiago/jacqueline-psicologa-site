@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { WA_COURAGE } from "@/lib/constants";
@@ -29,7 +29,7 @@ export default function Courage() {
         }} />
       </motion.div>
 
-      <div className="container" style={{ position: "relative", zIndex: 1, maxWidth: 780 }}>
+      <div className="wrap" style={{ position: "relative", zIndex: 1, maxWidth: 780 }}>
         <motion.span
           className="eyebrow"
           initial={{ opacity: 0, y: 10 }}

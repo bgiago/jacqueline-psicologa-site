@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -15,7 +15,7 @@ export default function About() {
 
   return (
     <section id="sobre" ref={ref} style={{ padding: "clamp(5rem,10vw,8rem) 0", overflow: "hidden" }}>
-      <div className="container max-md:grid-cols-1" style={{ display: "grid", gridTemplateColumns: "0.8fr 1fr", gap: "clamp(2.5rem,6vw,5rem)", alignItems: "center" }}>
+      <div className="wrap max-md:grid-cols-1" style={{ display: "grid", gridTemplateColumns: "0.8fr 1fr", gap: "clamp(2.5rem,6vw,5rem)", alignItems: "center" }}>
         {/* Photo placeholder (parallax) */}
         <motion.div style={{ y: imageY }}>
           <motion.div

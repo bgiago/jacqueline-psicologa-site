@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -103,7 +103,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
 export default function HowItWorks() {
   return (
     <section id="como-funciona" style={{ padding: "clamp(5rem,10vw,8rem) 0", background: "var(--color-surface)", position: "relative", overflow: "hidden" }}>
-      <div className="container">
+      <div className="wrap">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

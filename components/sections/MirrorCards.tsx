@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { WA_MIRROR } from "@/lib/constants";
@@ -84,7 +84,7 @@ export default function MirrorCards() {
         borderRadius: "50%", pointerEvents: "none",
       }} />
 
-      <div className="container">
+      <div className="wrap">
         <div ref={headerRef} style={{ marginBottom: "3.5rem", textAlign: "center" }}>
           <motion.span
             className="eyebrow"

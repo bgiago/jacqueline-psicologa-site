@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,7 +7,7 @@ export default function LeadCapture() {
 
   return (
     <section style={{ padding: "clamp(4rem,8vw,7rem) 0", background: "var(--color-bg)" }}>
-      <div className="container">
+      <div className="wrap">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

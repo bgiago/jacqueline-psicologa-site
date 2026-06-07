@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { WA_DEFAULT } from "@/lib/constants";
@@ -29,7 +29,7 @@ export default function Contact() {
       {/* Background orb */}
       <div style={{ position: "absolute", bottom: "-20%", right: "-10%", width: "40%", height: "50%", background: "radial-gradient(ellipse, rgba(107,158,120,.12) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

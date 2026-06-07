@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 @theme {
   /* Brand palette */
@@ -153,7 +153,17 @@ p { max-width: 68ch; }
 
 /* ── Section layouts ────────────────────────── */
 .section { padding: clamp(5rem, 10vw, 8rem) 0; }
-.container { max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2.5rem); }
+
+@layer utilities {
+  .wrap {
+    width: 100%;
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1.2rem, 4vw, 2.5rem);
+    padding-right: clamp(1.2rem, 4vw, 2.5rem);
+  }
+}
 
 /* ── Aurora bg ──────────────────────────────── */
 .aurora-bg {

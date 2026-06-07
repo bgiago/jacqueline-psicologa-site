@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 
 const services = [
@@ -57,7 +57,7 @@ export default function Services() {
         />
       </div>
 
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

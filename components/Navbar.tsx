@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { WA_DEFAULT } from "@/lib/constants";
@@ -36,7 +36,7 @@ export default function Navbar() {
         transition: "padding .35s ease, background .35s ease, backdrop-filter .35s ease, border .35s ease, box-shadow .35s ease",
       }}
     >
-      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="#" style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-brand)" }}>
           Jacqueline <span style={{ color: "var(--color-purple)", fontStyle: "italic" }}>Borges</span>
         </a>
@@ -73,7 +73,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: "easeInOut" }}
             style={{ overflow: "hidden", background: "rgba(247,243,253,.96)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)", borderTop: "1px solid var(--color-line)" }}
           >
-            <div className="container" style={{ display: "flex", flexDirection: "column", padding: "1rem clamp(1.2rem, 4vw, 2.5rem)" }}>
+            <div className="wrap" style={{ display: "flex", flexDirection: "column", padding: "1rem clamp(1.2rem, 4vw, 2.5rem)" }}>
               {links.map(({ href, label }, i) => (
                 <motion.a key={href} href={href}
                   initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 
 const links = [
@@ -19,7 +19,7 @@ export default function Footer() {
       {/* Subtle aurora */}
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(139,109,196,.08) 0%, transparent 70%)", pointerEvents: "none" }} />
 
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: "2.5rem", alignItems: "start" }} className="max-md:grid-cols-1">
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-bg)", marginBottom: ".9rem" }}>

@@ -23,7 +23,8 @@ export default function Hero() {
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
-        paddingTop: "5rem",
+        paddingTop: "clamp(6rem, 8vw, 8rem)",
+        paddingBottom: "clamp(3rem, 5vw, 5rem)",
       }}
     >
       {/* Floating aurora blobs */}
@@ -61,20 +62,41 @@ export default function Hero() {
         }}
       />
 
-      <div className="container" style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center" }}>
+      <div className="wrap" style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 7rem)", alignItems: "center" }}>
         {/* Text side */}
         <motion.div style={{ y: textY, opacity }}>
+
+          {/* Location badge — above eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.34, 1.2, 0.64, 1] }}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: ".55rem",
+              marginBottom: "1.1rem", padding: ".45rem .95rem",
+              background: "rgba(255,255,255,0.75)",
+              backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+              border: "1px solid rgba(255,255,255,0.7)", borderRadius: 999,
+              boxShadow: "0 4px 18px rgba(90,60,150,.09)",
+              fontSize: ".78rem", color: "var(--color-brand-muted)", fontWeight: 500,
+            }}
+          >
+            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(107,158,120,.22)" }} />
+            Atendimento online · Araruama, RJ
+          </motion.div>
+
+          {/* CRP Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             className="eyebrow"
-            style={{ marginBottom: "1.4rem" }}
+            style={{ marginBottom: "1.6rem", display: "block" }}
           >
             Psicóloga Clínica · CRP 05/85378
           </motion.div>
 
-          <h1 style={{ fontSize: "clamp(2.6rem, 5.5vw, 5.2rem)", fontWeight: 500, lineHeight: 1.04, marginBottom: "2rem" }}>
+          <h1 style={{ fontSize: "clamp(2.8rem, 5.5vw, 5.2rem)", fontWeight: 500, lineHeight: 1.06, marginBottom: "2.4rem" }}>
             {headline.map((line, li) => (
               <span key={li} style={{ display: "block", overflow: "hidden" }}>
                 <motion.span
@@ -96,7 +118,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
             className="lead"
-            style={{ fontSize: "1.12rem", maxWidth: "46ch", marginBottom: "2.2rem" }}
+            style={{ fontSize: "1.1rem", maxWidth: "48ch", marginBottom: "2.6rem" }}
           >
             Um espaço de escuta genuína, onde você pode ser quem é — sem precisar ser forte o tempo todo.
           </motion.p>
@@ -124,24 +146,6 @@ export default function Hero() {
               Conhecer meu trabalho
             </motion.a>
           </motion.div>
-
-          {/* Floating badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 1.3, ease: [0.34, 1.2, 0.64, 1] }}
-            style={{
-              display: "inline-flex", alignItems: "center", gap: ".6rem",
-              marginTop: "2.2rem", padding: ".6rem 1.1rem",
-              background: "rgba(255,255,255,0.75)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-              border: "1px solid rgba(255,255,255,0.7)", borderRadius: 999,
-              boxShadow: "0 4px 18px rgba(90,60,150,.09)",
-              fontSize: ".8rem", color: "var(--color-brand-muted)", fontWeight: 500,
-            }}
-          >
-            <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(107,158,120,.22)" }} />
-            Atendimento online · Araruama, RJ
-          </motion.div>
         </motion.div>
 
         {/* Image side */}
@@ -151,7 +155,12 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ position: "relative", y: imageY }}
         >
-          <div style={{ position: "relative", aspectRatio: "4/5", maxHeight: "78vh", borderRadius: "38% 62% 52% 48% / 42% 38% 62% 58%", overflow: "hidden", boxShadow: "0 32px 80px rgba(90,60,150,.18)" }}>
+          <div style={{
+            position: "relative", aspectRatio: "4/5", maxHeight: "80vh",
+            borderRadius: "38% 62% 52% 48% / 42% 38% 62% 58%",
+            overflow: "hidden",
+            boxShadow: "0 32px 80px rgba(90,60,150,.18)",
+          }}>
             <Image
               src="/imagem-jacqueline.png"
               alt="Jacqueline Borges, Psicóloga Clínica"
@@ -160,32 +169,8 @@ export default function Hero() {
               style={{ objectFit: "cover", objectPosition: "top center" }}
               sizes="(max-width: 768px) 90vw, 45vw"
             />
-            {/* Subtle gradient overlay at bottom */}
             <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, rgba(238,230,248,.5), transparent)", pointerEvents: "none" }} />
           </div>
-
-          {/* Floating credential card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20, x: 10 }}
-            animate={{ opacity: 1, y: 0, x: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            animate-loop={{ y: [0, -8, 0] }}
-            style={{
-              position: "absolute", bottom: "8%", left: "-14%",
-              padding: "1rem 1.4rem",
-              background: "rgba(255,255,255,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
-              border: "1px solid rgba(255,255,255,0.75)", borderRadius: 18,
-              boxShadow: "0 16px 40px rgba(90,60,150,.14)",
-              zIndex: 3,
-            }}
-          >
-            <div style={{ fontFamily: "var(--font-display)", fontSize: "1.6rem", fontWeight: 600, color: "var(--color-purple)", lineHeight: 1 }}>
-              50 min
-            </div>
-            <div style={{ fontSize: ".72rem", color: "var(--color-brand-muted)", marginTop: ".2rem", fontWeight: 500 }}>
-              Sessão semanal
-            </div>
-          </motion.div>
 
           {/* Decorative ring */}
           <div style={{
@@ -211,7 +196,6 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Mobile override */}
       <style>{`
         @media (max-width: 760px) {
           .hero-grid { grid-template-columns: 1fr !important; padding-top: 5.5rem !important; }

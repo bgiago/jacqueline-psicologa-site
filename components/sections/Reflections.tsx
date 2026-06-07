@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 
 const posts = [
@@ -25,7 +25,7 @@ const posts = [
 export default function Reflections() {
   return (
     <section style={{ padding: "clamp(5rem,10vw,8rem) 0", background: "var(--color-bg)" }}>
-      <div className="container">
+      <div className="wrap">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
