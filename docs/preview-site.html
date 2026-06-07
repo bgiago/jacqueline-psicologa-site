@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jacqueline Borges — Psicóloga Clínica | Atendimento online e presencial</title>
+<meta name="description" content="Psicóloga clínica para mulheres que vivem entre cobranças e silêncios. Um espaço de escuta e acolhimento — online e presencial. Conversa inicial pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Paleta da marca Jacqueline Borges */
+    --bg:#F4F0FA; --surface:#EDE5F5; --surface-soft:#FDFAFF;
+    --text:#231A32; --text-muted:#4E4065; --text-soft:#9080AE;
+    --purple:#9576C8; --purple-lt:#C4AADF; --purple-pl:#E8DEFC;
+    --sage:#7DAA8A; --sage-lt:#A8C8B2; --sage-pl:#DFF0E5;
+    --cta:#9576C8; --cta-hover:#7358A8; --cta-text:#FDFAFF;
+    --line:rgba(149,118,200,.20); --dark:#2A1F3D;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-body:'DM Sans',system-ui,-apple-system,sans-serif;
+    --maxw:1140px; --shadow:0 14px 40px rgba(115,88,168,.10); --shadow-hover:0 22px 55px rgba(115,88,168,.17);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased;font-size:17px;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.08;letter-spacing:-.005em}
+  h1 em,h2 em,h3 em{font-style:italic;color:var(--purple)}
+  em{font-style:italic}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .narrow{max-width:660px;margin-left:auto;margin-right:auto}
+  section{padding:clamp(4rem,9vw,7.5rem) 0}
+  .eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--purple);font-weight:600}
+  .lead{color:var(--text-muted)}
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-body);font-weight:500;font-size:.95rem;letter-spacing:.01em;padding:.95rem 1.7rem;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease}
+  .btn-primary{background:var(--cta);color:var(--cta-text)}
+  .btn-primary:hover{background:var(--cta-hover);transform:translateY(-2px);box-shadow:0 12px 26px rgba(115,88,168,.34)}
+  .btn-ghost{background:transparent;color:var(--purple);border-color:var(--purple)}
+  .btn-ghost:hover{background:var(--purple-pl);transform:translateY(-2px)}
+  .btn-light{background:var(--bg);color:var(--text)}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.22)}
+  .btn svg{width:18px;height:18px}
+  .btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+  /* placeholders */
+  .ph{position:relative;background:linear-gradient(135deg,var(--purple-pl) 0%,var(--sage-pl) 100%);border:1px dashed var(--purple-lt);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.7rem;color:var(--text-muted);padding:1.5rem}
+  .ph svg{width:40px;height:40px;opacity:.55;color:var(--purple)}
+  .ph-label{font-size:.82rem;line-height:1.5;letter-spacing:.02em}
+  .ph-label strong{display:block;font-weight:600;color:var(--text);font-size:.9rem;margin-bottom:.15rem}
+  .ph-label em{font-size:.76rem;opacity:.85}
+  .ph-portrait{aspect-ratio:4/5}
+  .ph-square{aspect-ratio:1/1}
+  .ph-wide{aspect-ratio:3/2}
+  /* nav */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .25s ease,box-shadow .25s ease,padding .25s ease;padding:1.25rem 0}
+  header.nav.scrolled{background:rgba(244,240,250,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:.7rem 0}
+  .nav-in{display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--font-display);font-size:1.5rem;font-weight:600;letter-spacing:.03em}
+  .brand span{color:var(--purple)}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a.link{font-size:.9rem;font-weight:400;color:var(--text);position:relative;padding:.2rem 0}
+  .nav-links a.link::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--purple);transition:width .25s ease}
+  .nav-links a.link:hover::after{width:100%}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--text)}
+  .menu-btn svg{width:26px;height:26px}
+  /* hero */
+  .hero{padding-top:clamp(8rem,16vw,11rem);padding-bottom:clamp(4rem,9vw,7rem);position:relative}
+  .hero::before{content:"";position:absolute;top:0;right:0;width:48%;height:100%;background:var(--surface);z-index:-1;border-bottom-left-radius:120px}
+  .hero::after{content:"";position:absolute;bottom:-60px;left:-90px;width:300px;height:300px;border-radius:55% 45% 40% 60%/48% 52% 48% 52%;background:var(--sage-pl);opacity:.5;z-index:-1;pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero h1{font-size:clamp(2.7rem,6vw,4.6rem);margin:1.2rem 0 1.5rem}
+  .hero .sub{font-size:1.12rem;color:var(--text-muted);max-width:30ch;margin-bottom:2.2rem}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:1rem}
+  /* generic section heads */
+  .sec-head{margin-bottom:3rem}
+  .sec-head h2{font-size:clamp(2rem,4vw,3rem);margin-top:.6rem}
+  .center{text-align:center}
+  /* identificação */
+  .ident p{font-size:1.15rem;margin-bottom:1.4rem}
+  .ident ul{list-style:none;margin:1.6rem 0;display:flex;flex-direction:column;gap:1rem}
+  .ident li{display:flex;gap:.85rem;align-items:flex-start;color:var(--text-muted)}
+  .ident li svg{width:20px;height:20px;color:var(--purple);flex:none;margin-top:.35rem}
+  /* mirror cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .card{background:var(--surface-soft);border:1px solid var(--line);border-radius:14px;padding:2rem 1.7rem;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+  .card .ic{width:38px;height:38px;border-radius:10px;background:var(--purple-pl);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+  .card .ic svg{width:20px;height:20px;color:var(--purple)}
+  .card p{font-size:1.02rem;color:var(--text)}
+  .mirror-foot{margin-top:2.6rem;text-align:center}
+  .mirror-foot p{font-family:var(--font-display);font-size:1.5rem;font-style:italic;color:var(--text);margin-bottom:1.4rem}
+  /* sobre */
+  .about-grid{display:grid;grid-template-columns:.8fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .about-text p{margin-bottom:1.3rem;color:var(--text-muted)}
+  .about-text p:first-of-type{font-size:1.18rem;color:var(--text)}
+  .sign{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--text);margin-top:1.6rem}
+  .sign small{display:block;font-family:var(--font-body);font-style:normal;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft);margin-top:.4rem}
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;position:relative}
+  .step .num{font-family:var(--font-display);font-size:3.2rem;color:var(--purple);line-height:1;margin-bottom:.8rem}
+  .step h3{font-size:1.5rem;margin-bottom:.6rem}
+  .step p{color:var(--text-muted);font-size:1rem}
+  .step{position:relative}
+  .step:not(:last-child)::after{content:"";position:absolute;top:1.4rem;right:-1.1rem;width:2.2rem;height:1px;background:var(--line)}
+  /* atendimento (toque sálvia) */
+  .serv{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .serv .card .ic{background:var(--sage-pl)}
+  .serv .card .ic svg{color:var(--sage)}
+  .serv .card h3{font-size:1.35rem;margin-bottom:.6rem}
+  .serv .card p{color:var(--text-muted);font-size:.98rem}
+  .scope{text-align:center;margin-top:1.8rem;color:var(--text-soft);font-size:.95rem;letter-spacing:.02em}
+  /* signature */
+  .signature{background:var(--dark);color:var(--bg)}
+  .signature .eyebrow{color:var(--purple-lt)}
+  .signature blockquote{font-family:var(--font-display);font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.18;font-weight:500;margin:1.2rem 0 1.8rem;max-width:18ch}
+  .signature p{color:#CDBEEA;max-width:46ch;margin-bottom:.9rem}
+  .signature .big{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--bg);margin:1.4rem 0 2rem;max-width:40ch}
+  /* reflections */
+  .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .post{background:var(--surface-soft);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+  .post:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+  .post .cap{padding:1.1rem 1.2rem 1.4rem}
+  .post .cap small{color:var(--purple);font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+  .post .cap p{font-size:.95rem;color:var(--text);margin-top:.4rem}
+  /* FAQ */
+  .faq{max-width:760px;margin:0 auto}
+  details{border-bottom:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;padding:1.4rem .2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--font-display);font-size:1.3rem;font-weight:500;color:var(--text)}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{flex:none;width:26px;height:26px;position:relative;transition:transform .3s ease}
+  summary .pm::before,summary .pm::after{content:"";position:absolute;background:var(--purple);border-radius:2px}
+  summary .pm::before{top:12px;left:4px;right:4px;height:2px}
+  summary .pm::after{left:12px;top:4px;bottom:4px;width:2px;transition:opacity .3s ease}
+  details[open] summary .pm::after{opacity:0}
+  .faq-body{padding:0 .2rem 1.5rem;color:var(--text-muted);font-size:1.02rem;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  /* forms */
+  .band{background:var(--surface)}
+  .lead-cap{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;background:var(--surface-soft);border:1px solid var(--line);border-radius:18px;padding:clamp(1.8rem,4vw,2.8rem);box-shadow:var(--shadow)}
+  form .row{display:flex;gap:1rem;flex-wrap:wrap}
+  .field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;flex:1;min-width:180px}
+  label{font-size:.82rem;font-weight:500;color:var(--text)}
+  input,textarea{font-family:var(--font-body);font-size:1rem;padding:.85rem 1rem;border:1px solid var(--line);border-radius:10px;background:#FBF9FF;color:var(--text);transition:border .2s ease,box-shadow .2s ease}
+  input:focus,textarea:focus{border-color:var(--purple);outline:none;box-shadow:0 0 0 3px rgba(149,118,200,.18)}
+  textarea{resize:vertical;min-height:96px}
+  .consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;color:var(--text-muted);margin:.4rem 0 1.1rem}
+  .consent input{width:18px;height:18px;flex:none;margin-top:.15rem;padding:0;accent-color:var(--purple)}
+  .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,3.5rem);align-items:start}
+  .contact-side{background:var(--surface);border-radius:18px;padding:clamp(1.8rem,4vw,2.6rem)}
+  .contact-side h3{font-size:1.5rem;margin-bottom:1rem}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:1.2rem}
+  .contact-list li{display:flex;gap:.8rem;align-items:center;color:var(--text-muted);font-size:.95rem}
+  .contact-list svg{width:20px;height:20px;color:var(--purple);flex:none}
+  .form-ok{display:none;background:var(--sage-pl);border:1px solid var(--sage-lt);color:#355C43;border-radius:10px;padding:1rem 1.2rem;font-size:.95rem;margin-top:1rem}
+  /* footer */
+  footer{background:var(--dark);color:#C9BBDF;padding:clamp(3rem,7vw,5rem) 0 2.5rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;align-items:start}
+  footer .brand{color:var(--bg)}
+  footer .brand span{color:var(--purple-lt)}
+  footer .tagline{font-family:var(--font-display);font-style:italic;font-size:1.25rem;color:var(--bg);max-width:24ch;margin:1rem 0}
+  footer h4{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-lt);margin-bottom:1rem;font-family:var(--font-body);font-weight:600}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;font-size:.92rem}
+  footer a:hover{color:var(--bg)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:2.5rem;padding-top:1.5rem;font-size:.8rem;color:#8E7FB0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+  /* float whatsapp */
+  .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s ease}
+  .wa-float:hover{transform:scale(1.07)}
+  .wa-float svg{width:30px;height:30px;color:#fff}
+  /* reveal */
+  .anim .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .anim .reveal.vis{opacity:1;transform:none}
+  /* skip link */
+  .skip{position:absolute;left:-999px;top:0;background:var(--cta);color:#fff;padding:.6rem 1rem;border-radius:0 0 8px 0;z-index:100}
+  .skip:focus{left:0}
+  /* responsive */
+  @media(max-width:860px){
+    .nav-links{display:none}
+    .menu-btn{display:block}
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .hero::before{display:none}
+    .hero .sub{max-width:100%}
+    .cards,.serv,.posts{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr;gap:1.6rem}
+    .step:not(:last-child)::after{display:none}
+    .lead-cap{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:2rem}
+  }
+  @media(max-width:540px){
+    body{font-size:16px}
+    .cards,.serv,.posts{grid-template-columns:1fr}
+    .hero-cta .btn{width:100%;justify-content:center}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Pular para o conteúdo</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="brand">Jacqueline <span>Borges</span></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a class="link" href="#sobre">Sobre</a>
+      <a class="link" href="#como-funciona">Como funciona</a>
+      <a class="link" href="#atendimento">Atendimento</a>
+      <a class="link" href="#duvidas">Dúvidas</a>
+      <a class="link" href="#contato">Contato</a>
+      <a class="btn btn-primary" href="https://wa.me/5522992659191?text=Oi%2C%20Jacqueline!%20Cheguei%20pelo%20seu%20site%20e%20gostaria%20de%20entender%20como%20funciona%20o%20atendimento." target="_blank" rel="noopener">Agendar conversa</a>
+    </nav>
+    <button class="menu-btn" aria-label="Abrir menu" onclick="document.querySelector('.nav-links').style.display='flex';this.style.display='none'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Psicóloga Clínica · CRP 05/85378</span>
+      <h1>Você não precisa dar conta de tudo <em>sozinha</em>.</h1>
+      <p class="sub">Um espaço de escuta e acolhimento para mulheres que vivem entre cobranças, responsabilidades e silêncios que ninguém vê. Atendimento online e presencial.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://wa.me/5522992659191?text=Oi%2C%20Jacqueline!%20Cheguei%20pelo%20seu%20site%20e%20gostaria%20de%20entender%20como%20funciona%20o%20atendimento." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Conversar no WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#sobre">Conhecer meu trabalho</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="ph ph-portrait" role="img" aria-label="Foto principal da Jacqueline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label"><strong>Foto da Jacqueline</strong><em>retrato vertical · luz natural · olhar para a câmera · sorriso leve, nada corporativo</em></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IDENTIFICAÇÃO ============ -->
+<section class="ident">
+  <div class="wrap narrow center reveal">
+    <span class="eyebrow">Talvez você sinta isso</span>
+    <h2 style="font-size:clamp(1.8rem,3.6vw,2.7rem);margin:.6rem 0 2rem">Quando você cuida de todo mundo, quem cuida de você?</h2>
+    <p>Você continua de pé. Resolvendo, trabalhando, sustentando. Por fora, parece tudo sob controle.</p>
+    <p>Mas por dentro, alguma coisa começa a pedir atenção.</p>
+    <ul style="text-align:left;display:inline-flex">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> O cansaço que não passa nem no fim de semana.</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> A culpa que aparece quando você para pra pensar em si.</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> A sensação de que, por mais que você faça, nunca é suficiente.</li>
+    </ul>
+    <p style="margin-top:1.6rem;font-family:var(--font-display);font-style:italic;font-size:1.35rem;color:var(--text)">Aos poucos, você foi deixando de existir além do que carrega.</p>
+  </div>
+</section>
+
+<!-- ============ ESPELHO / CARDS ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Espelho</span>
+      <h2>Talvez você reconheça um pouco de você aqui.</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7"/><path d="M12 3v13"/><path d="M8 7l4-4 4 4"/></svg></div><p>Você sente que precisa dar conta de tudo — sozinha.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.5 6.5L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-.5z"/></svg></div><p>Você se cobra mais do que cobraria qualquer outra pessoa.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></div><p>Sente culpa quando para pra pensar em si mesma.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><p>Está exausta, mas não consegue desacelerar.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><p>Perdeu de vista quem você é além dos seus papéis.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.5 8.5 0 01-3.9-.9L3 20.5l1.5-5.1A8.4 8.4 0 0112 3a8.5 8.5 0 019 8.5z"/></svg></div><p>Carrega muita coisa em silêncio.</p></div>
+    </div>
+    <div class="mirror-foot reveal">
+      <p>Se você se reconheceu, conversar pode ser um bom primeiro passo.</p>
+      <a class="btn btn-primary" href="https://wa.me/5522992659191?text=Oi%2C%20Jacqueline!%20Me%20reconheci%20no%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener">Conversar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="ph ph-portrait" role="img" aria-label="Foto da Jacqueline para a seção Sobre">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label"><strong>Foto da Jacqueline</strong><em>mais pessoal e próxima · pode ser no consultório ou ambiente acolhedor</em></span>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">Sobre</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:.6rem 0 1.6rem">Oi, eu sou a Jacqueline.</h2>
+      <p>Eu também conheço a cobrança. O medo de errar. A vontade de fazer tudo da melhor forma possível — e o peso que vem junto.</p>
+      <p>Talvez seja por isso que eu acredite tanto em processos humanos. Sem perfeição, sem fórmula, sem julgamento.</p>
+      <p>Como psicóloga clínica, meu trabalho é caminhar ao seu lado pra você olhar pra sua própria história com mais clareza, acolher o que sente e construir caminhos possíveis pra viver com mais leveza. O objetivo nunca é te ajudar a dar conta de mais coisas — é te ajudar a não precisar carregar tudo sozinha.</p>
+      <p class="sign">Jacqueline Borges<small>Psicóloga Clínica · CRP 05/85378</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section id="como-funciona" class="band">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">O caminho</span>
+      <h2>Como funciona o acompanhamento</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3>Escuta</h3><p>A gente começa entendendo sua história, seu momento e o que tem ocupado espaço dentro de você.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3>Compreensão</h3><p>Aos poucos, damos nome ao que estava confuso: padrões, emoções e questões que pedem um olhar mais atento.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3>Construção</h3><p>Você desenvolve recursos pra lidar com os desafios de um jeito mais saudável — e mais seu.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ATENDIMENTO ============ -->
+<section id="atendimento">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Atendimento</span>
+      <h2>Formas de atendimento</h2>
+    </div>
+    <div class="serv">
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Psicoterapia individual</h3><p>Um espaço só seu, pra compreender melhor o que você sente e vive.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Online</h3><p>Acolhimento de onde você estiver, com o mesmo cuidado do presencial.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Presencial</h3><p>Em ambiente reservado e seguro, em [cidade/bairro].</p></div>
+    </div>
+    <p class="scope reveal">Atendimento para adolescentes, adultos e idosos.</p>
+  </div>
+</section>
+
+<!-- ============ SIGNATURE / CORAGEM ============ -->
+<section class="signature">
+  <div class="wrap narrow center reveal">
+    <span class="eyebrow">Coragem</span>
+    <blockquote style="margin-left:auto;margin-right:auto">Coragem nem sempre tem cara de coragem.</blockquote>
+    <p style="margin-left:auto;margin-right:auto">Às vezes ela aparece quando você pede ajuda. Quando admite, em voz alta, que está cansada. Quando decide olhar pra si com a mesma gentileza que você oferece a todo mundo.</p>
+    <p class="big" style="margin-left:auto;margin-right:auto">Procurar terapia não tira de você a força que te trouxe até aqui. Só divide o peso.</p>
+    <a class="btn btn-light" href="https://wa.me/5522992659191?text=Oi%2C%20Jacqueline!%20Decidi%20dar%20o%20primeiro%20passo.%20Podemos%20conversar%3F" target="_blank" rel="noopener">Quero conversar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- ============ REFLEXÕES / INSTAGRAM ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">@psi.jacborges</span>
+      <h2>Reflexões que talvez façam sentido pra você</h2>
+      <p class="lead" style="max-width:50ch;margin:.8rem auto 0">Toda semana eu compartilho um pouco sobre autoconhecimento, maternidade, autocobrança e saúde emocional.</p>
+    </div>
+    <div class="posts">
+      <div class="post reveal"><div class="ph ph-square" style="border-radius:0;border:none;border-bottom:1px solid var(--line)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg><span class="ph-label"><strong>Post do Instagram</strong><em>print ou embed do post real</em></span></div><div class="cap"><small>Autocobrança</small><p>“A autocrítica pode estar te machucando mais do que te ajudando.”</p></div></div>
+      <div class="post reveal"><div class="ph ph-square" style="border-radius:0;border:none;border-bottom:1px solid var(--line)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg><span class="ph-label"><strong>Post do Instagram</strong><em>print ou embed do post real</em></span></div><div class="cap"><small>Maternidade</small><p>“Ser uma boa mãe não é nunca falhar. É permanecer, apesar do medo.”</p></div></div>
+      <div class="post reveal"><div class="ph ph-square" style="border-radius:0;border:none;border-bottom:1px solid var(--line)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg><span class="ph-label"><strong>Post do Instagram</strong><em>print ou embed do post real</em></span></div><div class="cap"><small>Autoconhecimento</small><p>“O que você viveu te trouxe até aqui.”</p></div></div>
+    </div>
+    <div class="center reveal" style="margin-top:2.4rem">
+      <a class="btn btn-ghost" href="https://instagram.com/psi.jacborges" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        Acompanhar no Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="duvidas" class="band">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Dúvidas</span>
+      <h2>Antes de começar, algumas dúvidas comuns</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Terapia é só pra quem está em crise?<span class="pm"></span></summary><div class="faq-body">Não. A terapia também é um espaço pra se conhecer, refletir e cuidar de você antes que o peso aperte.</div></details>
+      <details><summary>Como funciona o primeiro contato?<span class="pm"></span></summary><div class="faq-body">Você me chama no WhatsApp e a gente conversa rápido pra entender o seu momento e ver o melhor caminho pra começar.</div></details>
+      <details><summary>É online ou presencial?<span class="pm"></span></summary><div class="faq-body">Os dois. Você escolhe o que cabe melhor na sua rotina.</div></details>
+      <details><summary>Preciso saber explicar o que estou sentindo pra marcar?<span class="pm"></span></summary><div class="faq-body">Não precisa chegar com tudo organizado. Pode chegar do jeito que você está — a gente organiza junto.</div></details>
+      <details><summary>Nunca fiz terapia. Tem problema?<span class="pm"></span></summary><div class="faq-body">Nenhum. A primeira conversa serve justamente pra isso: começar sem pressão.</div></details>
+      <details><summary>Quanto tempo dura cada sessão?<span class="pm"></span></summary><div class="faq-body">[Preencher — geralmente 50 minutos.]</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPTURA DE LEAD ============ -->
+<section>
+  <div class="wrap">
+    <div class="lead-cap reveal">
+      <div>
+        <span class="eyebrow">Sem pressa</span>
+        <h2 style="font-size:clamp(1.7rem,3.2vw,2.3rem);margin:.5rem 0 .7rem">Ainda não é a hora de marcar? Tudo bem.</h2>
+        <p class="lead">De vez em quando eu envio algo que pode te fazer bem: reflexões sobre autocuidado, maternidade e autocobrança. No seu tempo.</p>
+      </div>
+      <form onsubmit="return showOk(event,'ok1')" style="min-width:280px">
+        <div class="field"><label for="ln">Nome</label><input id="ln" type="text" required placeholder="Seu nome"></div>
+        <div class="field"><label for="le">E-mail</label><input id="le" type="email" required placeholder="seu@email.com"></div>
+        <label class="consent"><input type="checkbox" required> Aceito receber conteúdos por e-mail e concordo com a Política de Privacidade.</label>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Quero receber</button>
+        <div class="form-ok" id="ok1">Prontinho. Obrigada por confiar.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section id="contato" class="band">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos conversar?</h2>
+      <p class="lead" style="max-width:46ch;margin:.8rem auto 0">Me conta um pouco sobre o que te trouxe até aqui. Eu te respondo pessoalmente.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="reveal" onsubmit="return showOk(event,'ok2')">
+        <div class="row">
+          <div class="field"><label for="cn">Nome</label><input id="cn" type="text" required placeholder="Seu nome"></div>
+          <div class="field"><label for="cw">WhatsApp</label><input id="cw" type="tel" required placeholder="(22) 90000-0000"></div>
+        </div>
+        <div class="field"><label for="ce">E-mail</label><input id="ce" type="email" required placeholder="seu@email.com"></div>
+        <div class="field"><label for="cm">O que você gostaria de conversar? <span style="color:var(--text-soft);font-weight:400">(opcional)</span></label><textarea id="cm" placeholder="Pode escrever do jeito que você está se sentindo."></textarea></div>
+        <label class="consent"><input type="checkbox" required> Autorizo o contato e concordo com a Política de Privacidade.</label>
+        <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+        <div class="form-ok" id="ok2">Recebi sua mensagem. Te respondo em breve, com calma.</div>
+      </form>
+      <aside class="contact-side reveal">
+        <h3>Prefere falar agora?</h3>
+        <p class="lead" style="font-size:.95rem">Me chama direto no WhatsApp — a primeira conversa é tranquila, só pra entender o seu momento.</p>
+        <a class="btn btn-primary" style="margin-top:1.2rem" href="https://wa.me/5522992659191?text=Oi%2C%20Jacqueline!%20Cheguei%20pelo%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          (22) 99265-9191
+        </a>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> jacborgespsi@gmail.com</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg> @psi.jacborges</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> [cidade/bairro do consultório]</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Jacqueline <span>Borges</span></div>
+        <p class="tagline">Um espaço de escuta acolhedora, ética e comprometida com o seu processo.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5522992659191" target="_blank" rel="noopener">WhatsApp (22) 99265-9191</a></li>
+          <li><a href="mailto:jacborgespsi@gmail.com">jacborgespsi@gmail.com</a></li>
+          <li><a href="https://instagram.com/psi.jacborges" target="_blank" rel="noopener">@psi.jacborges</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informações</h4>
+        <ul>
+          <li>Jacqueline Borges</li>
+          <li>Psicóloga Clínica · CRP 05/85378</li>
+          <li>[cidade] · [endereço]</li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Jacqueline Borges. Todos os direitos reservados.</span>
+      <span>Atendimento para adolescentes, adultos e idosos.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5522992659191?text=Oi%2C%20Jacqueline!%20Cheguei%20pelo%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  var nav=document.getElementById('nav');
+  function onScroll(){ if(window.scrollY>24) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    document.documentElement.classList.add('anim');
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){ e.target.style.transitionDelay=(Math.min(i,4)*70)+'ms'; e.target.classList.add('vis'); io.unobserve(e.target); }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  }
+
+  function showOk(ev,id){ ev.preventDefault(); var ok=document.getElementById(id); ok.style.display='block'; ev.target.querySelector('button').textContent='Enviado ✓'; return false; }
+</script>
+</body>
+</html>
