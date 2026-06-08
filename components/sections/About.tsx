@@ -15,71 +15,7 @@ export default function About() {
 
   return (
     <section id="sobre" ref={ref} style={{ padding: "clamp(5rem,10vw,8rem) 0", overflow: "hidden" }}>
-      <div className="wrap mob-stack" style={{ display: "grid", gridTemplateColumns: "0.8fr 1fr", gap: "clamp(2.5rem,6vw,5rem)", alignItems: "center" }}>
-        {/* Photo placeholder (parallax) */}
-        <motion.div style={{ y: imageY }}>
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ position: "relative" }}
-          >
-            <div style={{
-              aspectRatio: "4/5",
-              borderRadius: "40% 60% 50% 50% / 42% 40% 60% 58%",
-              overflow: "hidden",
-              background: "linear-gradient(135deg, var(--color-purple-pl) 0%, var(--color-sage-pl) 100%)",
-              border: "1.5px dashed rgba(139,109,196,.35)",
-              display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column",
-              gap: ".8rem", color: "var(--color-brand-muted)", padding: "2rem", textAlign: "center",
-              boxShadow: "0 30px 80px rgba(90,60,150,.12)",
-            }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.3} style={{ width: 44, height: 44, opacity: .5, color: "var(--color-purple)" }}>
-                <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" />
-              </svg>
-              <span style={{ fontSize: ".82rem", lineHeight: 1.6 }}>
-                <strong style={{ display: "block", fontWeight: 600, color: "var(--color-brand)", fontSize: ".88rem" }}>Foto da Jacqueline</strong>
-                <em style={{ fontSize: ".74rem", opacity: .8 }}>mais pessoal e próxima</em>
-              </span>
-            </div>
-
-            {/* Floating quote card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5, ease: [0.34, 1.2, 0.64, 1] }}
-              className="about-quote-card"
-              style={{
-                position: "absolute", bottom: "-1.5rem", right: "-1.5rem",
-                padding: "1.2rem 1.5rem", maxWidth: 220,
-                background: "rgba(255,255,255,0.9)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
-                border: "1px solid rgba(255,255,255,.8)", borderRadius: 18,
-                boxShadow: "0 16px 40px rgba(90,60,150,.12)",
-              }}
-            >
-              <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "1rem", color: "var(--color-brand)", margin: 0, lineHeight: 1.4 }}>
-                "Ninguém precisa guardar tudo sozinho."
-              </p>
-            </motion.div>
-
-            {/* Decorative dot cluster */}
-            <motion.div
-              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-              viewport={{ once: true }} transition={{ delay: 0.7 }}
-              className="about-dots"
-              style={{
-                position: "absolute", top: "-1rem", left: "-1.2rem",
-                width: 80, height: 80,
-                backgroundImage: "radial-gradient(circle, rgba(139,109,196,.35) 1.5px, transparent 1.5px)",
-                backgroundSize: "10px 10px",
-                pointerEvents: "none",
-              }}
-            />
-          </motion.div>
-        </motion.div>
-
+      <div className="wrap mob-stack" style={{ display: "grid", gridTemplateColumns: "1fr 0.8fr", gap: "clamp(2.5rem,6vw,5rem)", alignItems: "center" }}>
         {/* Text */}
         <div>
           <motion.span
@@ -131,6 +67,70 @@ export default function About() {
             </small>
           </motion.div>
         </div>
+
+        {/* Photo placeholder (parallax) */}
+        <motion.div style={{ y: imageY }}>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{ position: "relative" }}
+          >
+            <div style={{
+              aspectRatio: "4/5",
+              borderRadius: "40% 60% 50% 50% / 42% 40% 60% 58%",
+              overflow: "hidden",
+              background: "linear-gradient(135deg, var(--color-purple-pl) 0%, var(--color-sage-pl) 100%)",
+              border: "1.5px dashed rgba(139,109,196,.35)",
+              display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column",
+              gap: ".8rem", color: "var(--color-brand-muted)", padding: "2rem", textAlign: "center",
+              boxShadow: "0 30px 80px rgba(90,60,150,.12)",
+            }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.3} style={{ width: 44, height: 44, opacity: .5, color: "var(--color-purple)" }}>
+                <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" />
+              </svg>
+              <span style={{ fontSize: ".82rem", lineHeight: 1.6 }}>
+                <strong style={{ display: "block", fontWeight: 600, color: "var(--color-brand)", fontSize: ".88rem" }}>Foto da Jacqueline</strong>
+                <em style={{ fontSize: ".74rem", opacity: .8 }}>mais pessoal e próxima</em>
+              </span>
+            </div>
+
+            {/* Floating quote card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5, ease: [0.34, 1.2, 0.64, 1] }}
+              className="about-quote-card"
+              style={{
+                position: "absolute", bottom: "-1.5rem", left: "-1.5rem",
+                padding: "1.2rem 1.5rem", maxWidth: 220,
+                background: "rgba(255,255,255,0.9)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
+                border: "1px solid rgba(255,255,255,.8)", borderRadius: 18,
+                boxShadow: "0 16px 40px rgba(90,60,150,.12)",
+              }}
+            >
+              <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "1rem", color: "var(--color-brand)", margin: 0, lineHeight: 1.4 }}>
+                "Ninguém precisa guardar tudo sozinho."
+              </p>
+            </motion.div>
+
+            {/* Decorative dot cluster */}
+            <motion.div
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+              viewport={{ once: true }} transition={{ delay: 0.7 }}
+              className="about-dots"
+              style={{
+                position: "absolute", top: "-1rem", right: "-1.2rem",
+                width: 80, height: 80,
+                backgroundImage: "radial-gradient(circle, rgba(139,109,196,.35) 1.5px, transparent 1.5px)",
+                backgroundSize: "10px 10px",
+                pointerEvents: "none",
+              }}
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
