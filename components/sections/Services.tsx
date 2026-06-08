@@ -138,7 +138,7 @@ export default function Services() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          style={{ textAlign: "center", marginTop: "2rem", color: "rgba(192,174,223,.5)", fontSize: ".88rem", letterSpacing: ".04em" }}
+          style={{ textAlign: "center", margin: "2rem auto 0", color: "rgba(192,174,223,.5)", fontSize: ".88rem", letterSpacing: ".04em" }}
         >
           Atendimento para adolescentes, adultos e idosos.
         </motion.p>
