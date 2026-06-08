@@ -30,112 +30,27 @@ export default function Contact() {
       <div style={{ position: "absolute", bottom: "-20%", right: "-10%", width: "40%", height: "50%", background: "radial-gradient(ellipse, rgba(107,158,120,.12) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-          style={{ marginBottom: "3.5rem", textAlign: "center" }}
-        >
-          <span className="eyebrow">Contato</span>
-          <h2 style={{ fontSize: "clamp(2rem,4vw,3.2rem)", marginTop: ".7rem" }}>
-            Vamos <em>conversar?</em>
-          </h2>
-          <p className="lead" style={{ maxWidth: "46ch", margin: ".9rem auto 0", fontSize: "1.04rem" }}>
-            Me conta um pouco sobre o que te trouxe até aqui. Eu te respondo pessoalmente.
-          </p>
-        </motion.div>
+        <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "clamp(2rem,5vw,4rem)", alignItems: "stretch" }}>
 
-        <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "clamp(2rem,5vw,3.5rem)", alignItems: "start" }}>
-          {/* Form */}
+          {/* Left column: header + CTA cards */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
-            style={{
-              background: "rgba(255,255,255,0.8)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
-              border: "1px solid rgba(255,255,255,0.75)", borderRadius: 22,
-              padding: "clamp(1.8rem,4vw,2.8rem)",
-              boxShadow: "0 12px 40px rgba(90,60,150,.08)",
-            }}
-          >
-            <AnimatePresence mode="wait">
-              {!sent ? (
-                <motion.form
-                  key="form"
-                  onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-                  initial={{ opacity: 1 }} exit={{ opacity: 0, y: -8 }}
-                >
-                  <div style={{ display: "flex", gap: "1rem", marginBottom: 0 }} className="max-sm:flex-col">
-                    <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem", flex: 1 }}>
-                      <label htmlFor="cn" className="label">Nome</label>
-                      <input id="cn" type="text" required placeholder="Seu nome" className="input" />
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem", flex: 1 }}>
-                      <label htmlFor="cw" className="label">WhatsApp</label>
-                      <input id="cw" type="tel" required placeholder="(22) 90000-0000" className="input" />
-                    </div>
-                  </div>
-
-                  <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem" }}>
-                    <label htmlFor="ce" className="label">E-mail</label>
-                    <input id="ce" type="email" required placeholder="seu@email.com" className="input" />
-                  </div>
-
-                  <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem" }}>
-                    <label htmlFor="cm" className="label">
-                      O que você gostaria de conversar?{" "}
-                      <span style={{ color: "var(--color-brand-soft)", fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>(opcional)</span>
-                    </label>
-                    <textarea id="cm" placeholder="Pode escrever do jeito que você está se sentindo." className="input" />
-                  </div>
-
-                  <label style={{ display: "flex", gap: ".6rem", alignItems: "flex-start", fontSize: ".78rem", color: "var(--color-brand-muted)", margin: ".3rem 0 1.2rem", cursor: "pointer" }}>
-                    <input type="checkbox" required style={{ width: 16, height: 16, flexShrink: 0, marginTop: ".2rem", accentColor: "var(--color-purple)" }} />
-                    Autorizo o contato e concordo com a Política de Privacidade.
-                  </label>
-
-                  <motion.button
-                    type="submit" whileHover={{ scale: 1.02, y: -1 }} whileTap={{ scale: 0.97 }}
-                    className="btn btn-primary"
-                  >
-                    Enviar mensagem
-                  </motion.button>
-                </motion.form>
-              ) : (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.92, y: 10 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ ease: [0.34, 1.2, 0.64, 1] }}
-                  style={{ padding: "2rem 0" }}
-                >
-                  <div style={{
-                    width: 52, height: 52, borderRadius: "50%", background: "var(--color-sage-pl)",
-                    display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.2rem",
-                  }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" strokeWidth={2.2} style={{ width: 24, height: 24 }}>
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <h3 style={{ fontSize: "1.4rem", marginBottom: ".5rem" }}>Recebi.</h3>
-                  <p style={{ color: "var(--color-brand-muted)", fontSize: "1rem" }}>
-                    Te respondo em breve, com calma.
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-
-          {/* Aside */}
-          <motion.aside
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.12 }}
             style={{ display: "flex", flexDirection: "column", gap: "1.8rem" }}
           >
+            {/* Header */}
+            <div>
+              <span className="eyebrow">Contato</span>
+              <h2 style={{ fontSize: "clamp(2rem,3.6vw,3.2rem)", marginTop: ".7rem" }}>
+                Vamos <em>conversar?</em>
+              </h2>
+              <p className="lead" style={{ maxWidth: "38ch", margin: ".9rem 0 0", fontSize: "1.04rem" }}>
+                Me conta um pouco sobre o que te trouxe até aqui. Eu te respondo pessoalmente.
+              </p>
+            </div>
+
             {/* WhatsApp CTA */}
             <div style={{
               background: "linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 100%)",
@@ -196,7 +111,91 @@ export default function Contact() {
                 ))}
               </ul>
             </div>
-          </motion.aside>
+          </motion.div>
+
+          {/* Right column: form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            style={{
+              background: "rgba(255,255,255,0.8)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
+              border: "1px solid rgba(255,255,255,0.75)", borderRadius: 22,
+              padding: "clamp(1.8rem,4vw,2.8rem)",
+              boxShadow: "0 12px 40px rgba(90,60,150,.08)",
+              display: "flex", flexDirection: "column",
+            }}
+          >
+            <AnimatePresence mode="wait">
+              {!sent ? (
+                <motion.form
+                  key="form"
+                  onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                  initial={{ opacity: 1 }} exit={{ opacity: 0, y: -8 }}
+                  style={{ flex: 1, display: "flex", flexDirection: "column" }}
+                >
+                  <div style={{ display: "flex", gap: "1rem", marginBottom: 0 }} className="max-sm:flex-col">
+                    <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem", flex: 1 }}>
+                      <label htmlFor="cn" className="label">Nome</label>
+                      <input id="cn" type="text" required placeholder="Seu nome" className="input" />
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem", flex: 1 }}>
+                      <label htmlFor="cw" className="label">WhatsApp</label>
+                      <input id="cw" type="tel" required placeholder="(22) 90000-0000" className="input" />
+                    </div>
+                  </div>
+
+                  <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem" }}>
+                    <label htmlFor="ce" className="label">E-mail</label>
+                    <input id="ce" type="email" required placeholder="seu@email.com" className="input" />
+                  </div>
+
+                  <div style={{ display: "flex", flexDirection: "column", gap: ".35rem", marginBottom: ".9rem", flex: 1 }}>
+                    <label htmlFor="cm" className="label">
+                      O que você gostaria de conversar?{" "}
+                      <span style={{ color: "var(--color-brand-soft)", fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>(opcional)</span>
+                    </label>
+                    <textarea id="cm" placeholder="Pode escrever do jeito que você está se sentindo." className="input" style={{ flex: 1, resize: "none", minHeight: "7rem" }} />
+                  </div>
+
+                  <label style={{ display: "flex", gap: ".6rem", alignItems: "flex-start", fontSize: ".78rem", color: "var(--color-brand-muted)", margin: ".3rem 0 1.2rem", cursor: "pointer" }}>
+                    <input type="checkbox" required style={{ width: 16, height: 16, flexShrink: 0, marginTop: ".2rem", accentColor: "var(--color-purple)" }} />
+                    Autorizo o contato e concordo com a Política de Privacidade.
+                  </label>
+
+                  <motion.button
+                    type="submit" whileHover={{ scale: 1.02, y: -1 }} whileTap={{ scale: 0.97 }}
+                    className="btn btn-primary"
+                  >
+                    Enviar mensagem
+                  </motion.button>
+                </motion.form>
+              ) : (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.92, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ ease: [0.34, 1.2, 0.64, 1] }}
+                  style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "2rem 0" }}
+                >
+                  <div style={{
+                    width: 52, height: 52, borderRadius: "50%", background: "var(--color-sage-pl)",
+                    display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.2rem",
+                  }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" strokeWidth={2.2} style={{ width: 24, height: 24 }}>
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: "1.4rem", marginBottom: ".5rem" }}>Recebi.</h3>
+                  <p style={{ color: "var(--color-brand-muted)", fontSize: "1rem" }}>
+                    Te respondo em breve, com calma.
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
         </div>
       </div>
     </section>
