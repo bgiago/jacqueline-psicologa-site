@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { WA_DEFAULT } from "@/lib/constants";
@@ -15,7 +15,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 20);
+    const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
@@ -23,20 +23,31 @@ export default function Navbar() {
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      animate={{ y: 0, opacity: scrolled ? 0.6 : 1 }}
+      transition={{
+        y: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+        opacity: { duration: 0.35, ease: "easeOut" },
+      }}
       style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
-        padding: scrolled ? "0.7rem 0" : "1.1rem 0",
-        background: scrolled ? "rgba(247,243,253,0.88)" : "transparent",
-        backdropFilter: scrolled ? "blur(18px) saturate(1.4)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(18px) saturate(1.4)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(139,109,196,.12)" : "none",
-        boxShadow: scrolled ? "0 4px 24px rgba(90,60,150,.07)" : "none",
-        transition: "padding .35s ease, background .35s ease, backdrop-filter .35s ease, border .35s ease, box-shadow .35s ease",
+        position: "fixed",
+        top: "1rem",
+        left: "1rem",
+        right: "1rem",
+        zIndex: 50,
+        borderRadius: open ? "14px 14px 0 0" : 14,
+        background: "rgba(247,243,253,0.9)",
+        backdropFilter: scrolled ? "blur(8px)" : "blur(18px) saturate(1.4)",
+        WebkitBackdropFilter: scrolled ? "blur(8px)" : "blur(18px) saturate(1.4)",
+        border: "1px solid rgba(255,255,255,0.72)",
+        boxShadow: scrolled
+          ? "0 2px 12px rgba(90,60,150,.06)"
+          : "0 4px 28px rgba(90,60,150,.10)",
+        padding: "0.7rem 0",
+        transition:
+          "border-radius .3s ease, backdrop-filter .35s ease, box-shadow .35s ease",
       }}
     >
-      <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 clamp(1rem, 2.5vw, 1.8rem)" }}>
         <a href="#" style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-brand)" }}>
           Jacqueline <span style={{ color: "var(--color-purple)", fontStyle: "italic" }}>Borges</span>
         </a>
@@ -60,9 +71,9 @@ export default function Navbar() {
           className="mob-flex"
           style={{ flexDirection: "column", gap: "5px", padding: "8px", background: "none", border: "none", cursor: "pointer" }}
         >
-          <motion.span animate={{ rotate: open ? 45 : 0, y: open ? 7 : 0 }} style={{ display: "block", width: 22, height: 2, background: "var(--color-brand)", borderRadius: 2, transition: "background .2s" }} />
+          <motion.span animate={{ rotate: open ? 45 : 0, y: open ? 7 : 0 }} style={{ display: "block", width: 22, height: 2, background: "var(--color-brand)", borderRadius: 2 }} />
           <motion.span animate={{ opacity: open ? 0 : 1 }} style={{ display: "block", width: 22, height: 2, background: "var(--color-brand)", borderRadius: 2 }} />
-          <motion.span animate={{ rotate: open ? -45 : 0, y: open ? -7 : 0 }} style={{ display: "block", width: 22, height: 2, background: "var(--color-brand)", borderRadius: 2, transition: "background .2s" }} />
+          <motion.span animate={{ rotate: open ? -45 : 0, y: open ? -7 : 0 }} style={{ display: "block", width: 22, height: 2, background: "var(--color-brand)", borderRadius: 2 }} />
         </button>
       </div>
 
@@ -71,9 +82,15 @@ export default function Navbar() {
           <motion.div
             initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{ overflow: "hidden", background: "rgba(247,243,253,.96)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)", borderTop: "1px solid var(--color-line)" }}
+            style={{
+              overflow: "hidden",
+              background: "rgba(247,243,253,.96)",
+              backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)",
+              borderTop: "1px solid rgba(139,109,196,.1)",
+              borderRadius: "0 0 14px 14px",
+            }}
           >
-            <div className="wrap" style={{ display: "flex", flexDirection: "column", padding: "1rem clamp(1.2rem, 4vw, 2.5rem)" }}>
+            <div style={{ display: "flex", flexDirection: "column", padding: "0.5rem clamp(1rem, 2.5vw, 1.8rem) 1rem" }}>
               {links.map(({ href, label }, i) => (
                 <motion.a key={href} href={href}
                   initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }}

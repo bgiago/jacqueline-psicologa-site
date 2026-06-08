@@ -17,13 +17,13 @@ export default function Hero() {
     <section
       ref={ref}
       style={{
-        minHeight: "100svh",
+        minHeight: "100vh",
         background: "var(--gradient-hero)",
         position: "relative",
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
-        paddingTop: "clamp(5.5rem, 8vw, 8rem)",
+        paddingTop: "6rem",
         paddingBottom: "clamp(3rem, 5vw, 5rem)",
       }}
     >
