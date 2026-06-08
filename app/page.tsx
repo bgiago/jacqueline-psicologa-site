@@ -8,7 +8,6 @@ import Services from "@/components/sections/Services";
 import Courage from "@/components/sections/Courage";
 import Reflections from "@/components/sections/Reflections";
 import FAQ from "@/components/sections/FAQ";
-import LeadCapture from "@/components/sections/LeadCapture";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -28,7 +27,6 @@ export default function Home() {
         <Courage />
         <Reflections />
         <FAQ />
-        <LeadCapture />
         <Contact />
       </main>
       <Footer />
