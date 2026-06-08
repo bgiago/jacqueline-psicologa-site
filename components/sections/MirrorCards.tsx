@@ -129,7 +129,7 @@ export default function MirrorCards() {
           transition={{ duration: 0.7 }}
           style={{ marginTop: "3rem", textAlign: "center" }}
         >
-          <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.35rem,2.4vw,1.7rem)", color: "var(--color-brand)", marginBottom: "1.6rem", lineHeight: 1.35 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(1.35rem,2.4vw,1.7rem)", color: "var(--color-brand)", margin: "0 auto 1.6rem", lineHeight: 1.35, textAlign: "center" }}>
             Se você se reconheceu, conversar pode ser um bom primeiro passo.
           </p>
           <motion.a
