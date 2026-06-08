@@ -41,7 +41,7 @@ export default function Navbar() {
           Jacqueline <span style={{ color: "var(--color-purple)", fontStyle: "italic" }}>Borges</span>
         </a>
 
-        <nav style={{ display: "flex", alignItems: "center", gap: "2.2rem" }} className="max-md:hidden">
+        <nav className="desk-only" style={{ display: "flex", alignItems: "center", gap: "2.2rem" }}>
           {links.map(({ href, label }) => (
             <NavLink key={href} href={href} label={label} />
           ))}
@@ -57,8 +57,8 @@ export default function Navbar() {
 
         <button
           aria-label="Menu" onClick={() => setOpen(!open)}
-          style={{ display: "none", flexDirection: "column", gap: "5px", padding: "8px", background: "none", border: "none", cursor: "pointer" }}
-          className="max-md:flex"
+          className="mob-flex"
+          style={{ flexDirection: "column", gap: "5px", padding: "8px", background: "none", border: "none", cursor: "pointer" }}
         >
           <motion.span animate={{ rotate: open ? 45 : 0, y: open ? 7 : 0 }} style={{ display: "block", width: 22, height: 2, background: "var(--color-brand)", borderRadius: 2, transition: "background .2s" }} />
           <motion.span animate={{ opacity: open ? 0 : 1 }} style={{ display: "block", width: 22, height: 2, background: "var(--color-brand)", borderRadius: 2 }} />

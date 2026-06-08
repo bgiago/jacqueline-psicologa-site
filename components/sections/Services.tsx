@@ -1,5 +1,6 @@
 ﻿"use client";
 import { motion } from "framer-motion";
+import MobileCarousel from "@/components/ui/MobileCarousel";
 
 const services = [
   {
@@ -21,6 +22,49 @@ const services = [
     tag: "Araruama, RJ",
   },
 ];
+
+function ServiceCard({ s, i }: { s: typeof services[0]; i: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.65, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
+      whileHover={{ y: -6 }}
+      style={{
+        padding: "2.2rem 2rem",
+        background: "rgba(255,255,255,0.06)",
+        backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
+        border: "1px solid rgba(255,255,255,0.1)",
+        borderRadius: 22,
+        boxShadow: "0 8px 32px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.08)",
+        transition: "box-shadow .3s",
+        height: "100%",
+      }}
+    >
+      <div style={{
+        width: 48, height: 48, borderRadius: 14,
+        background: "rgba(107,158,120,.18)", border: "1px solid rgba(107,158,120,.25)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        marginBottom: "1.4rem",
+      }}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-sage-lt)" strokeWidth={1.6} style={{ width: 22, height: 22 }}>
+          {s.icon}
+        </svg>
+      </div>
+      <div style={{
+        display: "inline-block", fontSize: ".65rem", letterSpacing: ".2em",
+        textTransform: "uppercase", color: "var(--color-sage-lt)", fontWeight: 600,
+        padding: ".2rem .7rem", background: "rgba(107,158,120,.12)",
+        borderRadius: 999, marginBottom: "1rem",
+      }}>
+        {s.tag}
+      </div>
+      <h3 style={{ fontSize: "1.3rem", color: "#F0E8FC", marginBottom: ".6rem" }}>{s.title}</h3>
+      <p style={{ color: "rgba(192,174,223,.75)", fontSize: ".98rem", lineHeight: 1.7, margin: 0 }}>{s.text}</p>
+    </motion.div>
+  );
+}
 
 export default function Services() {
   return (
@@ -74,50 +118,20 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.4rem" }} className="max-md:grid-cols-1">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 30, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.65, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
-              whileHover={{ y: -6 }}
-              style={{
-                padding: "2.2rem 2rem",
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: 22,
-                boxShadow: "0 8px 32px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.08)",
-                transition: "box-shadow .3s",
-              }}
-            >
-              <div style={{
-                width: 48, height: 48, borderRadius: 14,
-                background: "rgba(107,158,120,.18)", border: "1px solid rgba(107,158,120,.25)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                marginBottom: "1.4rem",
-              }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-sage-lt)" strokeWidth={1.6} style={{ width: 22, height: 22 }}>
-                  {s.icon}
-                </svg>
-              </div>
-
-              <div style={{
-                display: "inline-block", fontSize: ".65rem", letterSpacing: ".2em",
-                textTransform: "uppercase", color: "var(--color-sage-lt)", fontWeight: 600,
-                padding: ".2rem .7rem", background: "rgba(107,158,120,.12)",
-                borderRadius: 999, marginBottom: "1rem",
-              }}>
-                {s.tag}
-              </div>
-
-              <h3 style={{ fontSize: "1.3rem", color: "#F0E8FC", marginBottom: ".6rem" }}>{s.title}</h3>
-              <p style={{ color: "rgba(192,174,223,.75)", fontSize: ".98rem", lineHeight: 1.7, margin: 0 }}>{s.text}</p>
-            </motion.div>
-          ))}
+        {/* Desktop grid */}
+        <div className="desk-only" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.4rem" }}>
+          {services.map((s, i) => <ServiceCard key={s.title} s={s} i={i} />)}
         </div>
+      </div>
+
+      {/* Mobile carousel */}
+      <div className="mob-only" style={{ marginTop: "0.5rem" }}>
+        <MobileCarousel>
+          {services.map((s, i) => <ServiceCard key={s.title} s={s} i={i} />)}
+        </MobileCarousel>
+      </div>
+
+      <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
 
         <motion.p
           initial={{ opacity: 0 }}

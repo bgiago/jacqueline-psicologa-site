@@ -15,7 +15,7 @@ export default function About() {
 
   return (
     <section id="sobre" ref={ref} style={{ padding: "clamp(5rem,10vw,8rem) 0", overflow: "hidden" }}>
-      <div className="wrap max-md:grid-cols-1" style={{ display: "grid", gridTemplateColumns: "0.8fr 1fr", gap: "clamp(2.5rem,6vw,5rem)", alignItems: "center" }}>
+      <div className="wrap mob-stack" style={{ display: "grid", gridTemplateColumns: "0.8fr 1fr", gap: "clamp(2.5rem,6vw,5rem)", alignItems: "center" }}>
         {/* Photo placeholder (parallax) */}
         <motion.div style={{ y: imageY }}>
           <motion.div
@@ -50,6 +50,7 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5, ease: [0.34, 1.2, 0.64, 1] }}
+              className="about-quote-card"
               style={{
                 position: "absolute", bottom: "-1.5rem", right: "-1.5rem",
                 padding: "1.2rem 1.5rem", maxWidth: 220,
@@ -67,6 +68,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
               viewport={{ once: true }} transition={{ delay: 0.7 }}
+              className="about-dots"
               style={{
                 position: "absolute", top: "-1rem", left: "-1.2rem",
                 width: 80, height: 80,

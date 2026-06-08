@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { WA_MIRROR } from "@/lib/constants";
+import MobileCarousel from "@/components/ui/MobileCarousel";
 
 const cards = [
   {
@@ -102,11 +103,24 @@ export default function MirrorCards() {
           </motion.h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.4rem" }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+        {/* Desktop grid */}
+        <div className="desk-only" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.4rem" }}>
           {cards.map((card, i) => (
             <Card key={i} icon={card.icon} text={card.text} index={i} />
           ))}
         </div>
+      </div>
+
+      {/* Mobile carousel — rendered outside .wrap so cards extend edge-to-edge */}
+      <div className="mob-only" style={{ marginTop: "0.5rem" }}>
+        <MobileCarousel>
+          {cards.map((card, i) => (
+            <Card key={i} icon={card.icon} text={card.text} index={i} />
+          ))}
+        </MobileCarousel>
+      </div>
+
+      <div className="wrap">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

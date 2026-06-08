@@ -251,3 +251,65 @@ textarea.input { resize: vertical; min-height: 100px; }
   position: absolute; top: -1.5rem; left: -0.5rem; z-index: 0;
   user-select: none; pointer-events: none;
 }
+
+/* ── Mobile utilities ────────────────────────── */
+.mob-only  { display: none; }
+.mob-flex  { display: none; }
+
+/* ── Scrollbar hide (carousel) ───────────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Responsive breakpoints ──────────────────── */
+
+/* Tablet: 3-col → 2-col */
+@media (max-width: 900px) {
+  .tab-2col { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Mobile: stack everything */
+@media (max-width: 768px) {
+  /* Show / hide */
+  .desk-only { display: none !important; }
+  .mob-only  { display: block; }
+  .mob-flex  { display: flex; }
+
+  /* Force single-column on any grid (overrides inline gridTemplateColumns) */
+  .mob-stack { grid-template-columns: 1fr !important; }
+
+  /* Hero specific */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .hero-img-box {
+    max-height: 72vw !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+  .hero-deco-ring { display: none !important; }
+
+  /* Section vertical rhythm */
+  .mob-section-pad { padding-top: clamp(3rem, 9vw, 5rem) !important; padding-bottom: clamp(3rem, 9vw, 5rem) !important; }
+
+  /* Lead-capture form full width */
+  .mob-form-full { min-width: unset !important; width: 100% !important; }
+
+  /* About quote card — reposition so it doesn't overflow */
+  .about-quote-card {
+    position: static !important;
+    margin-top: 1.2rem;
+    max-width: 100% !important;
+  }
+
+  /* Dot decoration — hide on mobile to avoid overflow */
+  .about-dots { display: none !important; }
+
+  /* Footer bottom row — stack */
+  .footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: .4rem !important; }
+
+  /* Global button min touch target */
+  .btn { min-height: 48px; }
+
+  /* Prevent p max-width from being too restrictive */
+  p { max-width: 100%; }
+}

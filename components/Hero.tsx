@@ -23,7 +23,7 @@ export default function Hero() {
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
-        paddingTop: "clamp(6rem, 8vw, 8rem)",
+        paddingTop: "clamp(5.5rem, 8vw, 8rem)",
         paddingBottom: "clamp(3rem, 5vw, 5rem)",
       }}
     >
@@ -62,7 +62,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="wrap" style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 7rem)", alignItems: "center" }}>
+      <div className="wrap hero-grid" style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 7rem)", alignItems: "center" }}>
         {/* Text side */}
         <motion.div style={{ y: textY, opacity }}>
 
@@ -155,7 +155,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ position: "relative", y: imageY }}
         >
-          <div style={{
+          <div className="hero-img-box" style={{
             position: "relative", aspectRatio: "4/5", maxHeight: "80vh",
             borderRadius: "38% 62% 52% 48% / 42% 38% 62% 58%",
             overflow: "hidden",
@@ -173,7 +173,7 @@ export default function Hero() {
           </div>
 
           {/* Decorative ring */}
-          <div style={{
+          <div className="hero-deco-ring" style={{
             position: "absolute", inset: "-16px",
             borderRadius: "40% 60% 54% 46% / 44% 40% 60% 56%",
             border: "1.5px dashed rgba(139,109,196,.20)",
@@ -196,12 +196,6 @@ export default function Hero() {
         />
       </motion.div>
 
-      <style>{`
-        @media (max-width: 760px) {
-          .hero-grid { grid-template-columns: 1fr !important; padding-top: 5.5rem !important; }
-          .hero-grid > *:last-child { display: none; }
-        }
-      `}</style>
     </section>
   );
 }

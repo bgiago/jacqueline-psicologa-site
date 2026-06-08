@@ -20,7 +20,7 @@ export default function Footer() {
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(139,109,196,.08) 0%, transparent 70%)", pointerEvents: "none" }} />
 
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: "2.5rem", alignItems: "start" }} className="max-md:grid-cols-1">
+        <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: "2.5rem", alignItems: "start" }}>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-bg)", marginBottom: ".9rem" }}>
               Jacqueline{" "}
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div style={{ borderTop: "1px solid rgba(255,255,255,.08)", marginTop: "2.8rem", paddingTop: "1.5rem", fontSize: ".78rem", color: "rgba(192,174,223,.4)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: ".6rem" }}>
+        <div className="footer-bottom" style={{ borderTop: "1px solid rgba(255,255,255,.08)", marginTop: "2.8rem", paddingTop: "1.5rem", fontSize: ".78rem", color: "rgba(192,174,223,.4)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: ".6rem" }}>
           <span>© {new Date().getFullYear()} Jacqueline Borges. Todos os direitos reservados.</span>
           <span>Atendimento para adolescentes, adultos e idosos.</span>
         </div>

@@ -13,6 +13,7 @@ export default function LeadCapture() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
+          className="mob-stack"
           style={{
             display: "grid", gridTemplateColumns: "1fr auto", gap: "2.5rem",
             alignItems: "center", background: "rgba(255,255,255,0.75)",
@@ -22,7 +23,6 @@ export default function LeadCapture() {
             boxShadow: "0 16px 50px rgba(90,60,150,.09), 0 1px 0 rgba(255,255,255,.9) inset",
             position: "relative", overflow: "hidden",
           }}
-          className="max-md:grid-cols-1"
         >
           {/* Decorative bg */}
           <div style={{ position: "absolute", top: "-30%", right: "5%", width: 280, height: 280, background: "radial-gradient(ellipse, rgba(196,170,223,.2) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
@@ -39,8 +39,8 @@ export default function LeadCapture() {
 
           <form
             onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            className="mob-form-full"
             style={{ minWidth: 280, position: "relative", zIndex: 1 }}
-            className="max-md:w-full"
           >
             <AnimatePresence mode="wait">
               {!sent ? (

@@ -46,7 +46,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "clamp(2rem,5vw,3.5rem)", alignItems: "start" }} className="max-md:grid-cols-1">
+        <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "clamp(2rem,5vw,3.5rem)", alignItems: "start" }}>
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

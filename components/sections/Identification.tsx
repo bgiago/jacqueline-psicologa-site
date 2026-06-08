@@ -15,13 +15,14 @@ export default function Identification() {
   return (
     <section ref={ref} className="aurora-bg" style={{ padding: "clamp(5rem,10vw,8rem) 0" }}>
       <div className="wrap">
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "0.85fr 1fr",
-          gap: "clamp(2.5rem,6vw,5rem)",
-          alignItems: "center",
-        }}
-          className="max-md:grid-cols-1"
+        <div
+          className="mob-stack"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "0.85fr 1fr",
+            gap: "clamp(2.5rem,6vw,5rem)",
+            alignItems: "center",
+          }}
         >
           {/* Imagem — lado esquerdo */}
           <motion.div

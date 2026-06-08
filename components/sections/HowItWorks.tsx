@@ -120,7 +120,7 @@ export default function HowItWorks() {
           </p>
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.8rem" }} className="max-md:grid-cols-1">
+        <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.8rem" }}>
           {steps.map((step, i) => (
             <StepCard key={step.num} step={step} index={i} />
           ))}
