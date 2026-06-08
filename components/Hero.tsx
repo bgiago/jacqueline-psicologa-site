@@ -87,6 +87,7 @@ export default function Hero() {
                 border: "1px solid rgba(255,255,255,0.7)", borderRadius: 999,
                 boxShadow: "0 4px 18px rgba(90,60,150,.09)",
                 fontSize: ".76rem", color: "var(--color-brand-muted)", fontWeight: 500,
+                whiteSpace: "nowrap",
               }}
             >
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(107,158,120,.22)" }} />
