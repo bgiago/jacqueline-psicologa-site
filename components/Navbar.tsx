@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: scrolled ? 0.6 : 1 }}
+      animate={{ y: 0, opacity: scrolled ? 0.8 : 1 }}
       transition={{
         y: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
         opacity: { duration: 0.35, ease: "easeOut" },
@@ -44,7 +44,7 @@ export default function Navbar() {
           : "0 4px 28px rgba(90,60,150,.10)",
         padding: "0.7rem 0",
         transition:
-          "border-radius .3s ease, backdrop-filter .35s ease, box-shadow .35s ease",
+          "border-radius .3s ease, backdrop-filter .35s ease, -webkit-backdrop-filter .35s ease, box-shadow .35s ease",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 clamp(1rem, 2.5vw, 1.8rem)" }}>

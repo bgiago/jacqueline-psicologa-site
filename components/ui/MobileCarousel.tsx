@@ -1,6 +1,8 @@
 "use client";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
+import "swiper/css";
 
 interface Props {
   children: React.ReactNode[];
@@ -8,62 +10,28 @@ interface Props {
 
 export default function MobileCarousel({ children }: Props) {
   const [active, setActive] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = () => {
-    const el = trackRef.current;
-    if (!el || !el.children[0]) return;
-    const itemW = (el.children[0] as HTMLElement).offsetWidth + 12;
-    const idx = Math.round(el.scrollLeft / itemW);
-    setActive(Math.max(0, Math.min(idx, children.length - 1)));
-  };
-
-  const goTo = (i: number) => {
-    const el = trackRef.current;
-    if (!el || !el.children[0]) return;
-    const itemW = (el.children[0] as HTMLElement).offsetWidth + 12;
-    el.scrollTo({ left: i * itemW, behavior: "smooth" });
-    setActive(i);
-  };
 
   return (
     <div>
-      <div
-        ref={trackRef}
-        onScroll={handleScroll}
-        className="scrollbar-hide"
-        style={{
-          display: "flex",
-          overflowX: "scroll",
-          scrollSnapType: "x mandatory",
-          WebkitOverflowScrolling: "touch",
-          gap: "0.75rem",
-          paddingLeft: "clamp(1.2rem, 4vw, 2.5rem)",
-          paddingRight: "clamp(1.2rem, 4vw, 2.5rem)",
-          paddingBottom: "0.25rem",
-        }}
+      <Swiper
+        slidesPerView={1.2}
+        centeredSlides={true}
+        spaceBetween={14}
+        grabCursor={true}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onSlideChange={(swiper: any) => setActive(swiper.activeIndex)}
       >
         {children.map((child, i) => (
-          <div
-            key={i}
-            style={{
-              flexShrink: 0,
-              width: "80vw",
-              maxWidth: 340,
-              scrollSnapAlign: "start",
-            }}
-          >
-            {child}
-          </div>
+          <SwiperSlide key={i}>{child}</SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       {children.length > 1 && (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 6, marginTop: "1.2rem" }}>
           {children.map((_, i) => (
             <motion.button
               key={i}
-              onClick={() => goTo(i)}
+              onClick={() => setActive(i)}
               animate={{
                 width: i === active ? 24 : 8,
                 background: i === active ? "var(--color-purple)" : "rgba(139,109,196,.28)",
