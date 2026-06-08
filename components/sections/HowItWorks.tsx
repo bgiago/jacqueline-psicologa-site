@@ -115,7 +115,7 @@ export default function HowItWorks() {
           <h2 style={{ fontSize: "clamp(2rem,4vw,3.2rem)", marginTop: ".7rem" }}>
             Como funciona o <em>acompanhamento</em>
           </h2>
-          <p className="lead" style={{ maxWidth: 52, margin: ".9rem auto 0", fontSize: "1.06rem" }}>
+          <p className="lead" style={{ maxWidth: "52ch", margin: ".9rem auto 0", fontSize: "1.06rem", textAlign: "center" }}>
             Não há fórmula. Mas há um processo — respeitoso, no seu tempo.
           </p>
         </motion.div>
