@@ -307,6 +307,10 @@ textarea.input { resize: vertical; min-height: 100px; }
   /* Footer bottom row — stack */
   .footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: .4rem !important; }
 
+  /* Hero badge row — stack on mobile */
+  .hero-badge-row { flex-direction: column !important; align-items: flex-start !important; gap: .45rem !important; }
+  .hero-badge-divider { display: none !important; }
+
   /* Global button min touch target */
   .btn { min-height: 48px; }
 

@@ -66,12 +66,13 @@ export default function Hero() {
         {/* Text side */}
         <motion.div style={{ y: textY, opacity }}>
 
-          {/* Badge + CRP — same row */}
+          {/* Badge + CRP — same row on desktop, column on mobile */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.15 }}
-            style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: ".55rem .7rem", marginBottom: "2rem" }}
+            className="hero-badge-row"
+            style={{ display: "flex", alignItems: "center", gap: ".7rem", marginBottom: "2rem" }}
           >
             {/* Location pill */}
             <motion.span
@@ -92,8 +93,8 @@ export default function Hero() {
               Atendimento online · Araruama, RJ
             </motion.span>
 
-            {/* Thin vertical divider */}
-            <span style={{ width: 1, height: 13, background: "rgba(139,109,196,.3)", borderRadius: 1, flexShrink: 0 }} />
+            {/* Thin vertical divider — hidden on mobile */}
+            <span className="hero-badge-divider" style={{ width: 1, height: 13, background: "rgba(139,109,196,.3)", borderRadius: 1, flexShrink: 0 }} />
 
             {/* CRP eyebrow */}
             <motion.span
