@@ -25,7 +25,7 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="contato" style={{ padding: "clamp(5rem,10vw,8rem) 0", background: "var(--color-surface)", position: "relative", overflow: "hidden" }}>
+    <section id="contato" style={{ padding: "clamp(5rem,10vw,8rem) 0", background: "var(--color-bg)", position: "relative", overflow: "hidden" }}>
       {/* Background orb */}
       <div style={{ position: "absolute", bottom: "-20%", right: "-10%", width: "40%", height: "50%", background: "radial-gradient(ellipse, rgba(107,158,120,.12) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
