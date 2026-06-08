@@ -62,41 +62,51 @@ export default function Hero() {
         }}
       />
 
-      <div className="wrap hero-grid" style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 7rem)", alignItems: "center" }}>
+      <div className="wrap hero-grid" style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 3.5vw, 3.5rem)", alignItems: "center" }}>
         {/* Text side */}
         <motion.div style={{ y: textY, opacity }}>
 
-          {/* Location badge — above eyebrow */}
+          {/* Badge + CRP — same row */}
           <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.15, ease: [0.34, 1.2, 0.64, 1] }}
-            style={{
-              display: "inline-flex", alignItems: "center", gap: ".55rem",
-              marginBottom: "1.1rem", padding: ".45rem .95rem",
-              background: "rgba(255,255,255,0.75)",
-              backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-              border: "1px solid rgba(255,255,255,0.7)", borderRadius: 999,
-              boxShadow: "0 4px 18px rgba(90,60,150,.09)",
-              fontSize: ".78rem", color: "var(--color-brand-muted)", fontWeight: 500,
-            }}
-          >
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(107,158,120,.22)" }} />
-            Atendimento online · Araruama, RJ
-          </motion.div>
-
-          {/* CRP Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="eyebrow"
-            style={{ marginBottom: "1.6rem", display: "block" }}
+            transition={{ duration: 0.55, delay: 0.15 }}
+            style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: ".55rem .7rem", marginBottom: "2rem" }}
           >
-            Psicóloga Clínica · CRP 05/85378
+            {/* Location pill */}
+            <motion.span
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.2, ease: [0.34, 1.2, 0.64, 1] }}
+              style={{
+                display: "inline-flex", alignItems: "center", gap: ".5rem",
+                padding: ".4rem .9rem",
+                background: "rgba(255,255,255,0.8)",
+                backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+                border: "1px solid rgba(255,255,255,0.7)", borderRadius: 999,
+                boxShadow: "0 4px 18px rgba(90,60,150,.09)",
+                fontSize: ".76rem", color: "var(--color-brand-muted)", fontWeight: 500,
+              }}
+            >
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(107,158,120,.22)" }} />
+              Atendimento online · Araruama, RJ
+            </motion.span>
+
+            {/* Thin vertical divider */}
+            <span style={{ width: 1, height: 13, background: "rgba(139,109,196,.3)", borderRadius: 1, flexShrink: 0 }} />
+
+            {/* CRP eyebrow */}
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.28 }}
+              className="eyebrow"
+            >
+              Psicóloga Clínica · CRP 05/85378
+            </motion.span>
           </motion.div>
 
-          <h1 style={{ fontSize: "clamp(2.8rem, 5.5vw, 5.2rem)", fontWeight: 500, lineHeight: 1.06, marginBottom: "2.4rem" }}>
+          <h1 style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 500, lineHeight: 1.08, marginBottom: "3rem" }}>
             {headline.map((line, li) => (
               <span key={li} style={{ display: "block", overflow: "hidden" }}>
                 <motion.span
@@ -118,7 +128,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
             className="lead"
-            style={{ fontSize: "1.1rem", maxWidth: "48ch", marginBottom: "2.6rem" }}
+            style={{ fontSize: "1.1rem", maxWidth: "48ch", marginBottom: "3.2rem" }}
           >
             Um espaço de escuta genuína, onde você pode ser quem é — sem precisar ser forte o tempo todo.
           </motion.p>
@@ -127,7 +137,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}
+            style={{ display: "flex", gap: "0.9rem", flexWrap: "wrap", alignItems: "center" }}
           >
             <motion.a
               href={WA_DEFAULT} target="_blank" rel="noopener noreferrer"
