@@ -1,4 +1,5 @@
 ﻿"use client";
+import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { BorderBeam } from "@/components/ui/BorderBeam";
@@ -81,7 +82,7 @@ export default function Identification() {
           style={{
             display: "grid",
             gridTemplateColumns: "0.85fr 1fr",
-            gap: "clamp(2.5rem,6vw,5rem)",
+            gap: "clamp(4rem,9vw,8rem)",
             alignItems: "center",
           }}
         >
@@ -91,39 +92,14 @@ export default function Identification() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <div style={{
-              position: "relative",
-              aspectRatio: "4/5",
-              borderRadius: "42% 58% 50% 50% / 40% 42% 58% 60%",
-              overflow: "hidden",
-              background: "linear-gradient(145deg, var(--color-purple-pl) 0%, var(--color-sage-pl) 100%)",
-              border: "1.5px dashed rgba(139,109,196,.30)",
-              boxShadow: "0 28px 70px rgba(90,60,150,.11)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: ".9rem",
-              padding: "2rem",
-              textAlign: "center",
-            }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.3}
-                style={{ width: 44, height: 44, color: "var(--color-purple)", opacity: .45 }}>
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <path d="M21 15l-5-5L5 21" />
-              </svg>
-              <span style={{ fontSize: ".8rem", lineHeight: 1.6, color: "var(--color-brand-muted)" }}>
-                <strong style={{ display: "block", fontWeight: 600, color: "var(--color-brand)", fontSize: ".88rem" }}>
-                  Foto
-                </strong>
-                <em style={{ fontSize: ".74rem", opacity: .8 }}>placeholder para imagem</em>
-              </span>
-
-              {/* Decorative circles */}
-              <div style={{ position: "absolute", top: -24, right: -24, width: 110, height: 110, borderRadius: "50%", background: "rgba(255,255,255,.3)", pointerEvents: "none" }} />
-              <div style={{ position: "absolute", bottom: -16, left: -16, width: 80, height: 80, borderRadius: "50%", background: "rgba(107,158,120,.15)", pointerEvents: "none" }} />
-            </div>
+            <Image
+              src="/imagem-boneco-segunda-sec.png"
+              alt=""
+              width={600}
+              height={600}
+              style={{ width: "100%", height: "auto", display: "block" }}
+              sizes="(max-width: 768px) 80vw, 40vw"
+            />
 
             {/* Dot grid decoration */}
             <motion.div

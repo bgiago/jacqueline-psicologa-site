@@ -165,6 +165,24 @@ p { max-width: 68ch; }
   }
 }
 
+/* ── Hero ───────────────────────────────────── */
+@media (min-width: 769px) {
+  .hero-bg-desk {
+    background-image: url('/desk.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+  .hero-content-wrap {
+    padding-top: clamp(5.5rem, 8vw, 7rem);
+  }
+}
+@media (max-width: 768px) {
+  .hero-content-wrap {
+    padding-top: 2rem;
+  }
+}
+
 /* ── Aurora bg ──────────────────────────────── */
 .aurora-bg {
   background: var(--gradient-aurora), var(--color-bg);
@@ -276,17 +294,6 @@ textarea.input { resize: vertical; min-height: 100px; }
 
   /* Force single-column on any grid (overrides inline gridTemplateColumns) */
   .mob-stack { grid-template-columns: 1fr !important; }
-
-  /* Hero specific */
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  .hero-img-box {
-    max-height: 72vw !important;
-    aspect-ratio: 4 / 3 !important;
-  }
-  .hero-deco-ring { display: none !important; }
 
   /* Section vertical rhythm */
   .mob-section-pad { padding-top: clamp(3rem, 9vw, 5rem) !important; padding-bottom: clamp(3rem, 9vw, 5rem) !important; }

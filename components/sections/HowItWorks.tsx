@@ -332,14 +332,14 @@ export default function HowItWorks() {
           }}>
 
             {/* Left — text */}
-            <div style={{ padding: "clamp(2rem,4vw,3.2rem)", display: "flex", flexDirection: "column", minHeight: 380 }}>
+            <div style={{ padding: "clamp(1.4rem,2.5vw,2rem) clamp(2rem,4vw,3.2rem) clamp(2rem,4vw,3.2rem)", display: "flex", flexDirection: "column", justifyContent: "space-between", height: 360, overflow: "hidden" }}>
               <AnimatePresence mode="wait">
                 <motion.div key={step}
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  style={{ flex: 1 }}
+                  style={{ flex: "none" }}
                 >
                   <span style={{
                     fontFamily: "var(--font-display)", fontWeight: 600,
@@ -360,7 +360,7 @@ export default function HowItWorks() {
               </AnimatePresence>
 
               {/* Step pill nav */}
-              <div style={{ display: "flex", gap: ".5rem", marginTop: "2rem", flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: ".5rem", flexWrap: "wrap" }}>
                 {steps.map((s, i) => (
                   <motion.button
                     key={i}
@@ -397,7 +397,7 @@ export default function HowItWorks() {
                 borderLeft: "1px solid rgba(139,109,196,0.08)",
                 padding: "2rem",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                overflow: "hidden", position: "relative", minHeight: 260,
+                overflow: "hidden", position: "relative", height: 360,
               }}
             >
               {/* Faint grid dots */}

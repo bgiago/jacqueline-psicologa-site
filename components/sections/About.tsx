@@ -1,4 +1,5 @@
 ﻿"use client";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -100,19 +101,17 @@ export default function About() {
               aspectRatio: "4/5",
               borderRadius: "40% 60% 50% 50% / 42% 40% 60% 58%",
               overflow: "hidden",
-              background: "linear-gradient(135deg, var(--color-purple-pl) 0%, var(--color-sage-pl) 100%)",
-              border: "1.5px dashed rgba(139,109,196,.35)",
-              display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column",
-              gap: ".8rem", color: "var(--color-brand-muted)", padding: "2rem", textAlign: "center",
+              position: "relative",
               boxShadow: "0 30px 80px rgba(90,60,150,.12)",
             }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.3} style={{ width: 44, height: 44, opacity: .5, color: "var(--color-purple)" }}>
-                <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" />
-              </svg>
-              <span style={{ fontSize: ".82rem", lineHeight: 1.6 }}>
-                <strong style={{ display: "block", fontWeight: 600, color: "var(--color-brand)", fontSize: ".88rem" }}>Foto da Jacqueline</strong>
-                <em style={{ fontSize: ".74rem", opacity: .8 }}>mais pessoal e próxima</em>
-              </span>
+              <Image
+                src="/imagem-jacqueline.png"
+                alt="Jacqueline Borges, Psicóloga Clínica"
+                fill
+                priority
+                style={{ objectFit: "cover", objectPosition: "top center" }}
+                sizes="(max-width: 768px) 80vw, 40vw"
+              />
             </div>
 
             {/* Floating quote card */}
