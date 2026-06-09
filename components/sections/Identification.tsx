@@ -34,15 +34,7 @@ function RotatingTension({ items, visible }: { items: string[]; visible: boolean
         overflow: "hidden",
         boxShadow: "0 4px 24px rgba(139,109,196,.07), inset 0 1px 0 rgba(255,255,255,.9)",
       }}>
-        <BorderBeam
-          size={140}
-          duration={10}
-          borderWidth={1}
-          borderRadius={20}
-          colorFrom="rgba(139,109,196,0)"
-          colorCenter="rgba(139,109,196,0.7)"
-          colorTo="rgba(107,158,120,0.5)"
-        />
+        <BorderBeam duration={10} colorCenter="rgba(139,109,196,0.7)" colorTo="rgba(107,158,120,0.5)" />
         <AnimatePresence mode="wait">
           <motion.p
             key={index}

@@ -108,7 +108,7 @@ export default function Hero() {
             </motion.span>
           </motion.div>
 
-          <h1 style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 500, lineHeight: 1.08, marginBottom: "3rem" }}>
+          <h1 style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 500, lineHeight: 1.08, marginBottom: "1.2rem" }}>
             {headline.map((line, li) => (
               <span key={li} style={{ display: "block", overflow: "hidden" }}>
                 <motion.span

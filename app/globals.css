@@ -319,8 +319,9 @@ textarea.input { resize: vertical; min-height: 100px; }
 }
 
 /* ── BorderBeam ─────────────────────────────────────── */
-@keyframes border-beam-travel {
-  100% { offset-distance: 100%; }
+@keyframes border-beam-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .border-beam-wrap {
@@ -328,33 +329,41 @@ textarea.input { resize: vertical; min-height: 100px; }
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  border: calc(var(--beam-width, 1px) * 1px) solid transparent;
-  /* mask: show only the border strip */
-  mask:
-    linear-gradient(transparent, transparent) padding-box,
-    linear-gradient(white, white);
-  -webkit-mask:
-    linear-gradient(transparent, transparent) padding-box,
-    linear-gradient(white, white);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
+  /* 1px transparent border creates the "border strip" that the mask exposes */
+  border: calc(var(--beam-width, 1) * 1px) solid transparent;
   overflow: hidden;
+  /*
+   * Mask technique: two layers
+   *   Layer 1 (top)  — transparent gradient, clipped to padding-box (content area)
+   *   Layer 2 (bottom) — opaque gradient, clipped to border-box (everything)
+   * intersect: show only where layer 2 is opaque AND layer 1 is "neutral" (outside its clip)
+   * Result: the 1px border strip is visible; the content area is hidden.
+   */
+  -webkit-mask-image:
+    linear-gradient(rgba(0,0,0,0) 0 0),
+    linear-gradient(#000 0 0);
+  -webkit-mask-clip: padding-box, border-box;
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(rgba(0,0,0,0) 0 0),
+    linear-gradient(#000 0 0);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
 }
 
 .border-beam-beam {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
   aspect-ratio: 1 / 1;
-  width: calc(var(--beam-size, 160) * 1px);
-  background: linear-gradient(
-    to left,
-    var(--beam-from, rgba(139,109,196,0)),
-    var(--beam-color, rgba(139,109,196,0.85)),
-    var(--beam-to, rgba(107,158,120,0.6)),
-    transparent
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--beam-color, rgba(139,109,196,0.75)) 35deg,
+    var(--beam-to, rgba(107,158,120,0.5)) 65deg,
+    transparent 95deg
   );
-  offset-anchor: calc(var(--beam-anchor, 90) * 1%) 50%;
-  offset-path: rect(0 auto auto 0 round calc(var(--beam-radius, 20) * 1px));
-  offset-distance: 0%;
-  animation: border-beam-travel calc(var(--beam-duration, 14) * 1s) infinite linear;
+  animation: border-beam-spin calc(var(--beam-duration, 14) * 1s) linear infinite;
   animation-delay: calc(var(--beam-delay, 0) * -1s);
 }

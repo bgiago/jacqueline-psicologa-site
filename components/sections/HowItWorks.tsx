@@ -320,9 +320,7 @@ export default function HowItWorks() {
             boxShadow: "0 20px 60px rgba(90,60,150,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
           }}
         >
-          <BorderBeam size={220} duration={11} borderRadius={28}
-            colorFrom="rgba(139,109,196,0)" colorCenter="rgba(139,109,196,0.6)" colorTo="rgba(107,158,120,0.45)"
-          />
+          <BorderBeam duration={11} colorCenter="rgba(139,109,196,0.6)" colorTo="rgba(107,158,120,0.45)" />
 
           <div className="mob-stack" style={{
             display: "grid",
