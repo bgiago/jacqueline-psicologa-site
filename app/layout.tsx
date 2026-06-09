@@ -18,9 +18,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Jacqueline Borges — Psicóloga Clínica | Atendimento online e presencial",
+  title: "Jacqueline Borges — Psicóloga Clínica | Atendimento online",
   description:
-    "Psicóloga clínica para mulheres que vivem entre cobranças e silêncios. Um espaço de escuta e acolhimento — online e presencial. Conversa inicial pelo WhatsApp.",
+    "Psicóloga clínica para mulheres que vivem entre cobranças e silêncios. Um espaço de escuta e acolhimento — atendimento online, com possibilidade de presencial por combinação. Conversa inicial pelo WhatsApp.",
   openGraph: {
     title: "Jacqueline Borges — Psicóloga Clínica",
     description:

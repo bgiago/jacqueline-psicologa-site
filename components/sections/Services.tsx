@@ -4,7 +4,7 @@ import MobileCarousel from "@/components/ui/MobileCarousel";
 
 const services = [
   {
-    icon: <><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4 4-6 8-6s8 2 8 6" /></>,
+    icon: <><path d="M9.5 2A2.5 2.5 0 007 4.5A2.5 2.5 0 004.5 7a2 2 0 000 4a3 3 0 000 6v.5A2.5 2.5 0 007 20h10a2.5 2.5 0 002.5-2.5V17a3 3 0 000-6a2 2 0 000-4A2.5 2.5 0 0017 4.5A2.5 2.5 0 0014.5 2h-5z"/><line x1="12" y1="2" x2="12" y2="22"/></>,
     title: "Psicoterapia individual",
     text: "Um espaço só seu, pra compreender melhor o que você sente e vive.",
     tag: "Individual",
@@ -16,10 +16,10 @@ const services = [
     tag: "Online",
   },
   {
-    icon: <><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></>,
+    icon: <><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></>,
     title: "Presencial",
-    text: "Em ambiente reservado e seguro, em Araruama.",
-    tag: "Araruama, RJ",
+    text: "Para quem prefere o encontro ao vivo — pode ser combinado conforme disponibilidade e proximidade.",
+    tag: "Sob consulta",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function Services() {
             Formas de <em>atendimento</em>
           </h2>
           <p style={{ color: "rgba(192,174,223,.7)", maxWidth: "50ch", margin: ".9rem auto 0", fontSize: "1.04rem" }}>
-            Cada encontro é inteiramente seu. Online ou presencial — o cuidado é o mesmo.
+            Cada encontro é inteiramente seu — de onde você estiver.
           </p>
         </motion.div>
 

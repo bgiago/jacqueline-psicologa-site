@@ -4,8 +4,14 @@ import { useRef } from "react";
 
 const paragraphs = [
   "Eu também conheço a cobrança. O medo de errar. A vontade de fazer tudo da melhor forma possível — e o peso que vem junto.",
-  "Talvez seja por isso que eu acredite tanto em processos humanos. Sem perfeição, sem fórmula, sem julgamento.",
-  "Como psicóloga clínica com abordagem fenomenológica existencialista, meu trabalho é caminhar ao seu lado pra você olhar pra sua própria história com mais clareza, acolher o que sente e construir caminhos possíveis pra viver com mais leveza.",
+  "Passei anos como professora e orientadora educacional. Foi nesse contato com pessoas em processo — com suas histórias, dificuldades e potências — que encontrei o meu caminho pra a psicologia clínica. Não foi um desvio. Foi um aprofundamento.",
+  "Com pós-graduação em psicologia fenomenológica existencialista pelo IFEN, meu trabalho é caminhar ao seu lado pra você olhar pra sua própria história com mais clareza, acolher o que sente e construir caminhos possíveis pra viver com mais leveza.",
+];
+
+const credentials = [
+  "Pós-grad. IFEN",
+  "Orientadora Educacional",
+  "Congressos de Psicologia",
 ];
 
 export default function About() {
@@ -65,6 +71,19 @@ export default function About() {
             <small style={{ fontFamily: "var(--font-body)", fontStyle: "normal", fontSize: ".72rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--color-brand-soft)" }}>
               Psicóloga Clínica · CRP 05/85378
             </small>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: ".5rem", marginTop: "1rem" }}>
+              {credentials.map((c) => (
+                <span key={c} style={{
+                  fontSize: ".7rem", letterSpacing: ".12em", textTransform: "uppercase",
+                  fontFamily: "var(--font-body)", fontWeight: 500,
+                  color: "var(--color-purple)", padding: ".28rem .75rem",
+                  background: "var(--color-purple-pl)", borderRadius: 999,
+                  border: "1px solid rgba(139,109,196,.2)",
+                }}>
+                  {c}
+                </span>
+              ))}
+            </div>
           </motion.div>
         </div>
 

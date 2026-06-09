@@ -317,3 +317,44 @@ textarea.input { resize: vertical; min-height: 100px; }
   /* Prevent p max-width from being too restrictive */
   p { max-width: 100%; }
 }
+
+/* ── BorderBeam ─────────────────────────────────────── */
+@keyframes border-beam-travel {
+  100% { offset-distance: 100%; }
+}
+
+.border-beam-wrap {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: calc(var(--beam-width, 1px) * 1px) solid transparent;
+  /* mask: show only the border strip */
+  mask:
+    linear-gradient(transparent, transparent) padding-box,
+    linear-gradient(white, white);
+  -webkit-mask:
+    linear-gradient(transparent, transparent) padding-box,
+    linear-gradient(white, white);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  overflow: hidden;
+}
+
+.border-beam-beam {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  width: calc(var(--beam-size, 160) * 1px);
+  background: linear-gradient(
+    to left,
+    var(--beam-from, rgba(139,109,196,0)),
+    var(--beam-color, rgba(139,109,196,0.85)),
+    var(--beam-to, rgba(107,158,120,0.6)),
+    transparent
+  );
+  offset-anchor: calc(var(--beam-anchor, 90) * 1%) 50%;
+  offset-path: rect(0 auto auto 0 round calc(var(--beam-radius, 20) * 1px));
+  offset-distance: 0%;
+  animation: border-beam-travel calc(var(--beam-duration, 14) * 1s) infinite linear;
+  animation-delay: calc(var(--beam-delay, 0) * -1s);
+}

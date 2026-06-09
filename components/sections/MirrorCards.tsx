@@ -6,27 +6,33 @@ import MobileCarousel from "@/components/ui/MobileCarousel";
 
 const cards = [
   {
-    icon: <><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 10h8M8 14h5" /></>,
+    // Chama em brasa — pressão de dar conta de tudo
+    icon: <><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 3z" /></>,
     text: "Você sente que precisa dar conta de tudo — sozinha.",
   },
   {
-    icon: <><path d="M12 2l2.5 6.5L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-.5z" /></>,
+    // Olho — o olhar crítico sobre si mesma
+    icon: <><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></>,
     text: "Você se cobra mais do que cobraria qualquer outra pessoa.",
   },
   {
+    // Coração — culpa relacionada ao autocuidado
     icon: <><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" /></>,
     text: "Sente culpa quando para pra pensar em si mesma.",
   },
   {
-    icon: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
+    // Lua — exaustão, não consegue descansar
+    icon: <><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></>,
     text: "Está exausta, mas não consegue desacelerar.",
   },
   {
-    icon: <><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4 4-6 8-6s8 2 8 6" /></>,
+    // Bússola — perdeu o norte de quem é
+    icon: <><circle cx="12" cy="12" r="10" /><path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3 6.4-2.1z" /></>,
     text: "Perdeu de vista quem você é além dos seus papéis.",
   },
   {
-    icon: <><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.5 8.5 0 01-3.9-.9L3 20.5l1.5-5.1A8.4 8.4 0 0112 3a8.5 8.5 0 019 8.5z" /></>,
+    // Âncora — peso que carrega em silêncio
+    icon: <><circle cx="12" cy="5" r="3" /><line x1="12" y1="22" x2="12" y2="8" /><path d="M5 12H2a10 10 0 0020 0h-3" /></>,
     text: "Carrega muita coisa em silêncio.",
   },
 ];

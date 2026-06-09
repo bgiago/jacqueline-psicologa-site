@@ -1,12 +1,81 @@
 ﻿"use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { BorderBeam } from "@/components/ui/BorderBeam";
 
 const tensions = [
   "O cansaço que não passa nem no fim de semana.",
   "A culpa que aparece quando você para pra pensar em si.",
   "A sensação de que, por mais que você faça, nunca é suficiente.",
 ];
+
+function RotatingTension({ items, visible }: { items: string[]; visible: boolean }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!visible) return;
+    const timer = setInterval(() => setIndex((i) => (i + 1) % items.length), 5000);
+    return () => clearInterval(timer);
+  }, [visible, items.length]);
+
+  return (
+    <div style={{ marginBottom: "1.8rem" }}>
+      <div style={{
+        position: "relative",
+        minHeight: "5rem",
+        display: "flex",
+        alignItems: "center",
+        padding: "1.3rem 1.2rem",
+        background: "linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(247,243,253,0.58) 100%)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        borderRadius: 20,
+        marginBottom: ".9rem",
+        overflow: "hidden",
+        boxShadow: "0 4px 24px rgba(139,109,196,.07), inset 0 1px 0 rgba(255,255,255,.9)",
+      }}>
+        <BorderBeam
+          size={140}
+          duration={10}
+          borderWidth={1}
+          borderRadius={20}
+          colorFrom="rgba(139,109,196,0)"
+          colorCenter="rgba(139,109,196,0.7)"
+          colorTo="rgba(107,158,120,0.5)"
+        />
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={index}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{ fontSize: "clamp(0.82rem, 1.45vw, 1rem)", color: "var(--color-brand-muted)", margin: 0, lineHeight: 1.7, fontWeight: 400, whiteSpace: "nowrap" }}
+          >
+            {items[index]}
+          </motion.p>
+        </AnimatePresence>
+      </div>
+
+      {/* Dot indicators */}
+      <div style={{ display: "flex", gap: ".45rem" }}>
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            aria-label={`Ver item ${i + 1}`}
+            style={{
+              width: i === index ? 22 : 7, height: 7,
+              borderRadius: 999, border: "none", padding: 0, cursor: "pointer",
+              background: i === index ? "var(--color-purple)" : "rgba(139,109,196,.22)",
+              transition: "width .3s ease, background .3s ease",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Identification() {
   const ref = useRef(null);
@@ -116,24 +185,13 @@ export default function Identification() {
               Mas por dentro, alguma coisa começa a pedir atenção.
             </motion.p>
 
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: ".9rem", marginBottom: "1.8rem" }}>
-              {tensions.map((item, i) => (
-                <motion.li
-                  key={item}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.46 + i * 0.1 }}
-                  style={{ display: "flex", gap: ".85rem", alignItems: "flex-start", color: "var(--color-brand-muted)", fontSize: "1.02rem" }}
-                >
-                  <span style={{
-                    width: 7, height: 7, borderRadius: "50%", background: "var(--color-purple)",
-                    flexShrink: 0, marginTop: ".6rem",
-                    boxShadow: "0 0 0 3px rgba(139,109,196,.2)",
-                  }} />
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.46 }}
+            >
+              <RotatingTension items={tensions} visible={inView} />
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }} animate={inView ? { opacity: 1, scaleX: 1 } : {}}
