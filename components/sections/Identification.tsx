@@ -43,7 +43,7 @@ function RotatingTension({ items, visible }: { items: string[]; visible: boolean
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ fontSize: "clamp(0.82rem, 1.45vw, 1rem)", color: "var(--color-brand-muted)", margin: 0, lineHeight: 1.7, fontWeight: 400, whiteSpace: "nowrap" }}
+            style={{ fontSize: "clamp(0.95rem, 1.45vw, 1rem)", color: "var(--color-brand-muted)", margin: 0, lineHeight: 1.7, fontWeight: 400 }}
           >
             {items[index]}
           </motion.p>
@@ -75,7 +75,7 @@ export default function Identification() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="aurora-bg" style={{ padding: "clamp(5rem,10vw,8rem) 0" }}>
+    <section ref={ref} className="aurora-bg ident-section-clip" style={{ padding: "clamp(5rem,10vw,8rem) 0" }}>
       <div className="wrap">
         <div
           className="mob-stack"
@@ -88,9 +88,11 @@ export default function Identification() {
         >
           {/* Imagem — lado esquerdo */}
           <motion.div
+            className="ident-img-wrap"
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{ position: "relative" }}
           >
             <Image
               src="/imagem-boneco-segunda-sec.png"
@@ -98,11 +100,12 @@ export default function Identification() {
               width={600}
               height={600}
               style={{ width: "100%", height: "auto", display: "block" }}
-              sizes="(max-width: 768px) 80vw, 40vw"
+              sizes="(max-width: 768px) 72vw, 40vw"
             />
 
             {/* Dot grid decoration */}
             <motion.div
+              className="ident-dot-decor"
               initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.6 }}
               style={{

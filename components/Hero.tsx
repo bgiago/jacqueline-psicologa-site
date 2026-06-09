@@ -28,24 +28,26 @@ export default function Hero() {
         />
       </div>
 
-      {/* Mobile image — flush with top */}
-      <div className="mob-only">
+      {/* Mobile image — explicit dimensions so it renders inside flex column */}
+      <div className="mob-only" style={{ flexShrink: 0, lineHeight: 0 }}>
         <Image
           src="/mob.png"
           alt="Jacqueline Borges, Psicóloga Clínica"
           width={800}
           height={1000}
           priority
-          style={{ width: "100%", height: "auto", display: "block" }}
+          style={{ width: "100%", height: "52vh", objectFit: "cover", objectPosition: "top center", display: "block" }}
+          sizes="(max-width: 768px) 100vw, 1px"
         />
       </div>
 
-      {/* Text content */}
+      {/* Text content — on mobile: card rises over image bottom */}
+      <div className="hero-text-section" style={{ flex: 1 }}>
       <div
         className="wrap hero-content-wrap"
         style={{
           flex: 1,
-          paddingBottom: "clamp(3rem, 5vw, 5rem)",
+          paddingBottom: "clamp(2rem, 4vw, 5rem)",
           position: "relative",
           zIndex: 2,
         }}
@@ -55,7 +57,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.15 }}
-          className="hero-badge-row"
+          className="hero-badge-row hero-badge-wrap"
           style={{ display: "flex", alignItems: "center", gap: ".7rem", marginBottom: "2rem" }}
         >
           <motion.span
@@ -89,7 +91,7 @@ export default function Hero() {
           </motion.span>
         </motion.div>
 
-        <h1 style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 500, lineHeight: 1.08, marginBottom: "1.2rem" }}>
+        <h1 className="hero-h1" style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 500, lineHeight: 1.08, marginBottom: "1.2rem" }}>
           {headline.map((line, li) => (
             <span key={li} style={{ display: "block", overflow: "hidden" }}>
               <motion.span
@@ -110,7 +112,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}
-          className="lead"
+          className="lead hero-lead"
           style={{ fontSize: "1.1rem", maxWidth: "48ch", marginBottom: "3.2rem" }}
         >
           Um espaço de escuta genuína, onde você pode ser quem é — sem precisar ser forte o tempo todo.
@@ -140,9 +142,11 @@ export default function Hero() {
           </motion.a>
         </motion.div>
       </div>
+      </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — desktop only, absolute won't conflict on mobile */}
       <motion.div
+        className="desk-only"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
         style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: ".4rem", zIndex: 3 }}

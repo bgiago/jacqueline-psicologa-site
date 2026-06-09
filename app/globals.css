@@ -178,10 +178,31 @@ p { max-width: 68ch; }
   }
 }
 @media (max-width: 768px) {
+  /* Card that rises over the bottom of the hero image */
+  .hero-text-section {
+    background: var(--color-bg);
+    border-radius: 1.4rem 1.4rem 0 0;
+    margin-top: -1.4rem;
+    position: relative;
+    z-index: 1;
+  }
   .hero-content-wrap {
-    padding-top: 2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 2.4rem;
+  }
+  /* Tighten vertical rhythm so CTA stays above fold */
+  .hero-badge-wrap  { margin-bottom: 1.1rem !important; }
+  .hero-h1          { font-size: clamp(2.1rem, 7.5vw, 2.8rem) !important; margin-bottom: 0.9rem !important; }
+  .hero-lead        { font-size: 0.97rem !important; margin-bottom: 1.6rem !important; }
+}
+
+/* ── Identification — desktop bleed left ──── */
+@media (min-width: 769px) {
+  .ident-img-wrap {
+    margin-left: -6rem;
   }
 }
+.ident-section-clip { overflow: hidden; }
 
 /* ── Aurora bg ──────────────────────────────── */
 .aurora-bg {
@@ -310,6 +331,21 @@ textarea.input { resize: vertical; min-height: 100px; }
 
   /* Dot decoration — hide on mobile to avoid overflow */
   .about-dots { display: none !important; }
+
+  /* Identification boneco — center + constrain on mobile */
+  .ident-img-wrap {
+    display: block !important;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .ident-img-wrap img {
+    max-width: 72vw !important;
+    width: auto !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .ident-dot-decor { display: none !important; }
 
   /* Footer bottom row — stack */
   .footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: .4rem !important; }
