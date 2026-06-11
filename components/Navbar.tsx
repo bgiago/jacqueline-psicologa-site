@@ -20,10 +20,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
+  const visible = scrolled || open;
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: scrolled ? 0.8 : 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{
         y: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
         opacity: { duration: 0.35, ease: "easeOut" },
@@ -35,16 +37,14 @@ export default function Navbar() {
         right: "1rem",
         zIndex: 50,
         borderRadius: open ? "14px 14px 0 0" : 14,
-        background: "rgba(247,243,253,0.9)",
-        backdropFilter: scrolled ? "blur(8px)" : "blur(18px) saturate(1.4)",
-        WebkitBackdropFilter: scrolled ? "blur(8px)" : "blur(18px) saturate(1.4)",
-        border: "1px solid rgba(255,255,255,0.72)",
-        boxShadow: scrolled
-          ? "0 2px 12px rgba(90,60,150,.06)"
-          : "0 4px 28px rgba(90,60,150,.10)",
+        background: visible ? "rgba(247,243,253,0.9)" : "transparent",
+        backdropFilter: visible ? "blur(12px) saturate(1.4)" : "none",
+        WebkitBackdropFilter: visible ? "blur(12px) saturate(1.4)" : "none",
+        border: visible ? "1px solid rgba(255,255,255,0.72)" : "1px solid transparent",
+        boxShadow: visible ? "0 4px 28px rgba(90,60,150,.10)" : "none",
         padding: "0.7rem 0",
         transition:
-          "border-radius .3s ease, backdrop-filter .35s ease, -webkit-backdrop-filter .35s ease, box-shadow .35s ease",
+          "background .4s ease, border-color .4s ease, box-shadow .4s ease, border-radius .3s ease, backdrop-filter .4s ease, -webkit-backdrop-filter .4s ease",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 clamp(1rem, 2.5vw, 1.8rem)" }}>
