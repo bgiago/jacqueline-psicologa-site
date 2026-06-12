@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Desktop background image */}
       <div className="desk-only" style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <Image
-          src="/desk.png"
+          src="/desk.webp"
           alt=""
           fill
           priority
@@ -31,12 +31,12 @@ export default function Hero() {
       {/* Mobile image — explicit dimensions so it renders inside flex column */}
       <div className="mob-only" style={{ flexShrink: 0, lineHeight: 0 }}>
         <Image
-          src="/mob.png"
+          src="/mob.webp"
           alt="Jacqueline Borges, Psicóloga Clínica"
           width={800}
           height={1000}
           priority
-          style={{ width: "100%", height: "52vh", objectFit: "cover", objectPosition: "top center", display: "block" }}
+          style={{ width: "100%", height: "60vh", objectFit: "cover", objectPosition: "top center", display: "block" }}
           sizes="(max-width: 768px) 100vw, 1px"
         />
       </div>

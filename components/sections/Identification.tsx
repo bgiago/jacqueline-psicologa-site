@@ -95,7 +95,7 @@ export default function Identification() {
             style={{ position: "relative" }}
           >
             <Image
-              src="/imagem-boneco-segunda-sec.png"
+              src="/imagem-boneco-segunda-sec.webp"
               alt=""
               width={600}
               height={600}

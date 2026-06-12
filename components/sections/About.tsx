@@ -105,7 +105,7 @@ export default function About() {
               boxShadow: "0 30px 80px rgba(90,60,150,.12)",
             }}>
               <Image
-                src="/imagem-jacqueline.png"
+                src="/imagem-jacqueline.webp"
                 alt="Jacqueline Borges, Psicóloga Clínica"
                 fill
                 priority
