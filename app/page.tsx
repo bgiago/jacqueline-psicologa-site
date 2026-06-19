@@ -6,7 +6,7 @@ import About from "@/components/sections/About";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Services from "@/components/sections/Services";
 import Courage from "@/components/sections/Courage";
-import Reflections from "@/components/sections/Reflections";
+import InstagramFeed from "@/components/InstagramFeed";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
@@ -25,7 +25,7 @@ export default function Home() {
         <HowItWorks />
         <Services />
         <Courage />
-        <Reflections />
+        <InstagramFeed />
         <FAQ />
         <Contact />
       </main>
