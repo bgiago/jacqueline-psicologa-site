@@ -1,46 +1,46 @@
 ﻿@import "tailwindcss";
 
 @theme {
-  /* Brand palette */
-  --color-bg: #F7F3FD;
-  --color-surface: #EEE6F8;
-  --color-surface-soft: #FDFAFF;
+  /* Brand palette — Jac Borges identity 2025 */
+  --color-bg: #FAF7F2;
+  --color-surface: #F0E9DF;
+  --color-surface-soft: #FDFCF9;
   --color-surface-card: rgba(255,255,255,0.72);
-  --color-brand: #1E1530;
-  --color-brand-muted: #4A3B6B;
-  --color-brand-soft: #8070A8;
-  --color-purple: #8B6DC4;
-  --color-purple-deep: #6B4FA8;
-  --color-purple-lt: #C4AADF;
-  --color-purple-pl: #EAE0FA;
-  --color-sage: #6B9E78;
-  --color-sage-lt: #97BFA2;
-  --color-sage-pl: #D8EEE0;
-  --color-dark: #110D1E;
-  --color-dark-2: #1D1530;
-  --color-gold: #D4A96A;
+  --color-brand: #363929;
+  --color-brand-muted: #666852;
+  --color-brand-soft: #8C8E72;
+  --color-purple: #96785A;
+  --color-purple-deep: #7A5E44;
+  --color-purple-lt: #C4A07E;
+  --color-purple-pl: #EDE0CF;
+  --color-sage: #575A4A;
+  --color-sage-lt: #8E9678;
+  --color-sage-pl: #CDDBBF;
+  --color-dark: #1E2014;
+  --color-dark-2: #2A2E1E;
+  --color-gold: #B8977A;
 
   /* Fonts */
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-body: var(--font-dmsans), system-ui, -apple-system, sans-serif;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(90,60,150,.08);
-  --shadow-card: 0 12px 40px rgba(90,60,150,.10);
-  --shadow-card-hover: 0 24px 60px rgba(90,60,150,.18);
-  --shadow-glow: 0 0 60px rgba(139,109,196,.25);
-  --shadow-sage: 0 12px 40px rgba(107,158,120,.12);
+  --shadow-sm: 0 2px 8px rgba(80,70,50,.08);
+  --shadow-card: 0 12px 40px rgba(80,70,50,.10);
+  --shadow-card-hover: 0 24px 60px rgba(80,70,50,.18);
+  --shadow-glow: 0 0 60px rgba(150,120,90,.25);
+  --shadow-sage: 0 12px 40px rgba(87,90,74,.12);
 }
 
 :root {
-  --color-line: rgba(139,109,196,.16);
-  --color-line-sage: rgba(107,158,120,.20);
-  --gradient-aurora: radial-gradient(ellipse 80% 60% at 60% -10%, rgba(139,109,196,.20) 0%, transparent 70%),
-                     radial-gradient(ellipse 50% 40% at 0% 80%, rgba(107,158,120,.14) 0%, transparent 65%),
-                     radial-gradient(ellipse 60% 50% at 100% 50%, rgba(196,170,223,.15) 0%, transparent 60%);
+  --color-line: rgba(150,120,90,.16);
+  --color-line-sage: rgba(87,90,74,.20);
+  --gradient-aurora: radial-gradient(ellipse 80% 60% at 60% -10%, rgba(150,120,90,.18) 0%, transparent 70%),
+                     radial-gradient(ellipse 50% 40% at 0% 80%, rgba(87,90,74,.12) 0%, transparent 65%),
+                     radial-gradient(ellipse 60% 50% at 100% 50%, rgba(196,162,130,.14) 0%, transparent 60%);
   --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.55) 100%);
-  --gradient-hero: linear-gradient(160deg, #F7F3FD 0%, #F0E8FC 45%, #E8F4EC 100%);
-  --gradient-dark: linear-gradient(160deg, #1E1530 0%, #110D1E 100%);
+  --gradient-hero: linear-gradient(160deg, #FAF7F2 0%, #F0E9DF 45%, #EAF0E3 100%);
+  --gradient-dark: linear-gradient(160deg, #363929 0%, #1E2014 100%);
 }
 
 /* ── Base ─────────────────────────────────── */
@@ -78,11 +78,11 @@ p { max-width: 68ch; }
 .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 .btn-primary {
   background: var(--color-purple);
-  color: #FDFAFF;
-  box-shadow: 0 8px 28px rgba(139,109,196,.35);
+  color: #FDFCF9;
+  box-shadow: 0 8px 28px rgba(150,120,90,.35);
 }
-.btn-primary:hover { background: var(--color-purple-deep); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(139,109,196,.44); }
-.btn-ghost { background: transparent; color: var(--color-purple); border-color: rgba(139,109,196,.40); }
+.btn-primary:hover { background: var(--color-purple-deep); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(150,120,90,.44); }
+.btn-ghost { background: transparent; color: var(--color-purple); border-color: rgba(150,120,90,.40); }
 .btn-ghost:hover { background: var(--color-purple-pl); transform: translateY(-2px); }
 .btn-light {
   background: rgba(255,255,255,0.85);
@@ -95,10 +95,10 @@ p { max-width: 68ch; }
 .btn-light:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.14); }
 .btn-sage {
   background: var(--color-sage);
-  color: #fff;
-  box-shadow: 0 8px 28px rgba(107,158,120,.30);
+  color: #F5F0E8;
+  box-shadow: 0 8px 28px rgba(87,90,74,.30);
 }
-.btn-sage:hover { background: #5A8C66; transform: translateY(-2px); box-shadow: 0 14px 36px rgba(107,158,120,.40); }
+.btn-sage:hover { background: #474A38; transform: translateY(-2px); box-shadow: 0 14px 36px rgba(87,90,74,.40); }
 
 /* ── Typography ───────────────────────────── */
 .eyebrow {
@@ -212,7 +212,7 @@ p { max-width: 68ch; }
   position: relative;
   overflow: hidden;
 }
-.dark-section h2, .dark-section h3 { color: #F0E8FC; }
+.dark-section h2, .dark-section h3 { color: #F5F0E8; }
 
 /* ── FAQ ──────────────────────────────────────── */
 .faq-item { border-bottom: 1px solid var(--color-line); }
@@ -232,7 +232,7 @@ p { max-width: 68ch; }
   border-radius: 12px; background: rgba(255,255,255,.8); color: var(--color-brand);
   width: 100%; transition: border .2s ease, box-shadow .2s ease, background .2s ease;
 }
-.input:focus { border-color: var(--color-purple); outline: none; background: #fff; box-shadow: 0 0 0 4px rgba(139,109,196,.12); }
+.input:focus { border-color: var(--color-purple); outline: none; background: #fff; box-shadow: 0 0 0 4px rgba(150,120,90,.12); }
 .input::placeholder { color: var(--color-brand-soft); opacity: .7; }
 textarea.input { resize: vertical; min-height: 100px; }
 .label { font-size: .8rem; font-weight: 600; color: var(--color-brand-muted); letter-spacing: .03em; }
@@ -398,8 +398,8 @@ textarea.input { resize: vertical; min-height: 100px; }
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    var(--beam-color, rgba(139,109,196,0.75)) 35deg,
-    var(--beam-to, rgba(107,158,120,0.5)) 65deg,
+    var(--beam-color, rgba(150,120,90,0.75)) 35deg,
+    var(--beam-to, rgba(87,90,74,0.5)) 65deg,
     transparent 95deg
   );
   animation: border-beam-spin calc(var(--beam-duration, 14) * 1s) linear infinite;

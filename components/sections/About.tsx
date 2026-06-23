@@ -79,7 +79,7 @@ export default function About() {
                   fontFamily: "var(--font-body)", fontWeight: 500,
                   color: "var(--color-purple)", padding: ".28rem .75rem",
                   background: "var(--color-purple-pl)", borderRadius: 999,
-                  border: "1px solid rgba(139,109,196,.2)",
+                  border: "1px solid rgba(150,120,90,.2)",
                 }}>
                   {c}
                 </span>
@@ -102,7 +102,7 @@ export default function About() {
               borderRadius: "40% 60% 50% 50% / 42% 40% 60% 58%",
               overflow: "hidden",
               position: "relative",
-              boxShadow: "0 30px 80px rgba(90,60,150,.12)",
+              boxShadow: "0 30px 80px rgba(80,70,50,.12)",
             }}>
               <Image
                 src="/imagem-jacqueline.webp"
@@ -126,7 +126,7 @@ export default function About() {
                 padding: "1.2rem 1.5rem", maxWidth: 220,
                 background: "rgba(255,255,255,0.9)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
                 border: "1px solid rgba(255,255,255,.8)", borderRadius: 18,
-                boxShadow: "0 16px 40px rgba(90,60,150,.12)",
+                boxShadow: "0 16px 40px rgba(80,70,50,.12)",
               }}
             >
               <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "1rem", color: "var(--color-brand)", margin: 0, lineHeight: 1.4 }}>
@@ -142,7 +142,7 @@ export default function About() {
               style={{
                 position: "absolute", top: "-1rem", right: "-1.2rem",
                 width: 80, height: 80,
-                backgroundImage: "radial-gradient(circle, rgba(139,109,196,.35) 1.5px, transparent 1.5px)",
+                backgroundImage: "radial-gradient(circle, rgba(150,120,90,.35) 1.5px, transparent 1.5px)",
                 backgroundSize: "10px 10px",
                 pointerEvents: "none",
               }}

@@ -12,30 +12,30 @@ function EscutaIll() {
     <svg viewBox="0 0 300 240" fill="none" style={{ width: "100%", height: "100%" }}>
       {/* Soft halos */}
       <motion.circle cx="100" cy="120" r="82"
-        fill="rgba(139,109,196,0.07)"
+        fill="rgba(150,120,90,0.07)"
         initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
       />
       <motion.circle cx="200" cy="120" r="68"
-        fill="rgba(107,158,120,0.07)"
+        fill="rgba(87,90,74,0.07)"
         initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
       />
 
       {/* Left bubble */}
       <motion.rect x="14" y="66" width="116" height="72" rx="22"
-        fill="rgba(255,255,255,0.88)" stroke="rgba(139,109,196,0.22)" strokeWidth="1.5"
+        fill="rgba(255,255,255,0.88)" stroke="rgba(150,120,90,0.22)" strokeWidth="1.5"
         initial={{ x: -24, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.15 }}
       />
       <motion.path d="M38 138 L30 154 L56 146"
-        fill="rgba(255,255,255,0.88)" stroke="rgba(139,109,196,0.22)" strokeWidth="1.5"
+        fill="rgba(255,255,255,0.88)" stroke="rgba(150,120,90,0.22)" strokeWidth="1.5"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
       />
       {[0, 1, 2].map((i) => (
         <motion.rect key={i}
           x={30} y={86 + i * 17} width={i === 1 ? 52 : 68} height={4} rx={2}
-          fill="rgba(139,109,196,0.22)"
+          fill="rgba(150,120,90,0.22)"
           initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
           style={{ transformOrigin: "30px center" }}
           transition={{ duration: 0.45, delay: 0.6 + i * 0.1 }}
@@ -46,7 +46,7 @@ function EscutaIll() {
       {[0, 1, 2].map((i) => (
         <motion.path key={i}
           d={`M133 ${96 + i * 16} Q148 ${89 + i * 16} 163 ${96 + i * 16}`}
-          stroke="rgba(139,109,196,0.28)" strokeWidth="1.5" fill="none" strokeLinecap="round"
+          stroke="rgba(150,120,90,0.28)" strokeWidth="1.5" fill="none" strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 0.55, delay: 0.5 + i * 0.1 }}
@@ -55,18 +55,18 @@ function EscutaIll() {
 
       {/* Right bubble */}
       <motion.rect x="164" y="76" width="106" height="64" rx="20"
-        fill="rgba(255,255,255,0.82)" stroke="rgba(107,158,120,0.25)" strokeWidth="1.5"
+        fill="rgba(255,255,255,0.82)" stroke="rgba(87,90,74,0.25)" strokeWidth="1.5"
         initial={{ x: 24, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.2 }}
       />
       <motion.path d="M246 140 L254 154 L230 146"
-        fill="rgba(255,255,255,0.82)" stroke="rgba(107,158,120,0.25)" strokeWidth="1.5"
+        fill="rgba(255,255,255,0.82)" stroke="rgba(87,90,74,0.25)" strokeWidth="1.5"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
       />
       {[0, 1].map((i) => (
         <motion.rect key={i}
           x={178} y={94 + i * 17} width={i === 0 ? 60 : 42} height={4} rx={2}
-          fill="rgba(107,158,120,0.28)"
+          fill="rgba(87,90,74,0.28)"
           initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
           style={{ transformOrigin: "178px center" }}
           transition={{ duration: 0.45, delay: 0.7 + i * 0.1 }}
@@ -75,11 +75,11 @@ function EscutaIll() {
 
       {/* Floating dots */}
       {([
-        [68, 46, 4, "rgba(139,109,196,0.3)", 0.8],
-        [228, 52, 3, "rgba(107,158,120,0.35)", 0.9],
-        [148, 40, 5, "rgba(196,170,223,0.5)", 1.0],
-        [282, 105, 3, "rgba(107,158,120,0.22)", 1.1],
-        [24, 202, 4, "rgba(139,109,196,0.2)", 1.0],
+        [68, 46, 4, "rgba(150,120,90,0.3)", 0.8],
+        [228, 52, 3, "rgba(87,90,74,0.35)", 0.9],
+        [148, 40, 5, "rgba(196,162,130,0.5)", 1.0],
+        [282, 105, 3, "rgba(87,90,74,0.22)", 1.1],
+        [24, 202, 4, "rgba(150,120,90,0.2)", 1.0],
       ] as const).map(([cx, cy, r, fill, delay], i) => (
         <motion.circle key={i} cx={cx} cy={cy} r={r} fill={fill}
           initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
@@ -90,7 +90,7 @@ function EscutaIll() {
       {/* Heart */}
       <motion.path
         d="M149 205 C149 200 144 195 139 195 C129 195 125 205 134 211 L149 224 L164 211 C173 205 169 195 159 195 C154 195 149 200 149 205Z"
-        fill="rgba(139,109,196,0.16)" stroke="rgba(139,109,196,0.32)" strokeWidth="1.2"
+        fill="rgba(150,120,90,0.16)" stroke="rgba(150,120,90,0.32)" strokeWidth="1.2"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: [0, 1.2, 1], opacity: 1 }}
         style={{ transformOrigin: "149px 210px" }}
@@ -102,9 +102,9 @@ function EscutaIll() {
 
 function CompreensaoIll() {
   const nodes = [
-    { x: 150, y: 46, label: "padrões", fill: "rgba(139,109,196,0.1)", stroke: "rgba(139,109,196,0.3)", text: "rgba(74,59,107,0.85)" },
-    { x: 258, y: 172, label: "emoções", fill: "rgba(107,158,120,0.1)", stroke: "rgba(107,158,120,0.32)", text: "rgba(55,90,62,0.85)" },
-    { x: 44, y: 172, label: "questões", fill: "rgba(196,170,223,0.18)", stroke: "rgba(139,109,196,0.25)", text: "rgba(100,75,140,0.85)" },
+    { x: 150, y: 46, label: "padrões", fill: "rgba(150,120,90,0.1)", stroke: "rgba(150,120,90,0.3)", text: "rgba(70,65,50,0.85)" },
+    { x: 258, y: 172, label: "emoções", fill: "rgba(87,90,74,0.1)", stroke: "rgba(87,90,74,0.32)", text: "rgba(60,65,50,0.85)" },
+    { x: 44, y: 172, label: "questões", fill: "rgba(196,162,130,0.18)", stroke: "rgba(150,120,90,0.25)", text: "rgba(80,70,50,0.85)" },
   ];
   return (
     <svg viewBox="0 0 300 240" fill="none" style={{ width: "100%", height: "100%" }}>
@@ -112,7 +112,7 @@ function CompreensaoIll() {
       {nodes.map((n, i) => (
         <motion.path key={i}
           d={`M150 120 L${n.x} ${n.y}`}
-          stroke="rgba(139,109,196,0.14)" strokeWidth="1.5" strokeDasharray="5 5"
+          stroke="rgba(150,120,90,0.14)" strokeWidth="1.5" strokeDasharray="5 5"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 + i * 0.15 }}
@@ -121,24 +121,24 @@ function CompreensaoIll() {
 
       {/* Outer pulsing ring */}
       <motion.circle cx="150" cy="120" r="52"
-        fill="none" stroke="rgba(139,109,196,0.1)" strokeWidth="1"
+        fill="none" stroke="rgba(150,120,90,0.1)" strokeWidth="1"
         animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Center rings */}
       <motion.circle cx="150" cy="120" r="36"
-        fill="rgba(139,109,196,0.09)" stroke="rgba(139,109,196,0.2)" strokeWidth="1.5"
+        fill="rgba(150,120,90,0.09)" stroke="rgba(150,120,90,0.2)" strokeWidth="1.5"
         initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.6 }}
       />
       <motion.circle cx="150" cy="120" r="22"
-        fill="rgba(139,109,196,0.17)"
+        fill="rgba(150,120,90,0.17)"
         initial={{ scale: 0 }} animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       />
       <motion.circle cx="150" cy="120" r="8"
-        fill="rgba(139,109,196,0.6)"
+        fill="rgba(150,120,90,0.6)"
         initial={{ scale: 0 }} animate={{ scale: 1 }}
         transition={{ duration: 0.4, delay: 0.2 }}
       />
@@ -160,7 +160,7 @@ function CompreensaoIll() {
 
       {/* Small accent dots */}
       {([[196, 76, 0.9], [104, 76, 1.0], [200, 188, 1.1], [100, 188, 1.2]] as const).map(([cx, cy, delay], i) => (
-        <motion.circle key={i} cx={cx} cy={cy} r={3} fill="rgba(139,109,196,0.2)"
+        <motion.circle key={i} cx={cx} cy={cy} r={3} fill="rgba(150,120,90,0.2)"
           initial={{ scale: 0 }} animate={{ scale: 1 }}
           transition={{ delay }}
         />
@@ -171,15 +171,15 @@ function CompreensaoIll() {
 
 function ConstrucaoIll() {
   const blocks = [
-    { x: 48, y: 186, w: 82, h: 30, fill: "rgba(107,158,120,0.1)", stroke: "rgba(107,158,120,0.28)", delay: 0.1 },
-    { x: 78, y: 147, w: 82, h: 30, fill: "rgba(107,158,120,0.17)", stroke: "rgba(107,158,120,0.35)", delay: 0.25 },
-    { x: 108, y: 108, w: 82, h: 30, fill: "rgba(107,158,120,0.25)", stroke: "rgba(107,158,120,0.42)", delay: 0.4 },
-    { x: 138, y: 69, w: 82, h: 30, fill: "rgba(107,158,120,0.35)", stroke: "rgba(107,158,120,0.52)", delay: 0.55 },
+    { x: 48, y: 186, w: 82, h: 30, fill: "rgba(87,90,74,0.1)", stroke: "rgba(87,90,74,0.28)", delay: 0.1 },
+    { x: 78, y: 147, w: 82, h: 30, fill: "rgba(87,90,74,0.17)", stroke: "rgba(87,90,74,0.35)", delay: 0.25 },
+    { x: 108, y: 108, w: 82, h: 30, fill: "rgba(87,90,74,0.25)", stroke: "rgba(87,90,74,0.42)", delay: 0.4 },
+    { x: 138, y: 69, w: 82, h: 30, fill: "rgba(87,90,74,0.35)", stroke: "rgba(87,90,74,0.52)", delay: 0.55 },
   ];
   return (
     <svg viewBox="0 0 300 240" fill="none" style={{ width: "100%", height: "100%" }}>
       <motion.ellipse cx="178" cy="168" rx="108" ry="68"
-        fill="rgba(107,158,120,0.05)"
+        fill="rgba(87,90,74,0.05)"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       />
@@ -195,13 +195,13 @@ function ConstrucaoIll() {
 
       {/* Dashed upward path */}
       <motion.path d="M248 200 L248 66"
-        stroke="rgba(107,158,120,0.35)" strokeWidth="1.5"
+        stroke="rgba(87,90,74,0.35)" strokeWidth="1.5"
         strokeDasharray="4 5" strokeLinecap="round"
         initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.72 }}
       />
       <motion.path d="M243 73 L248 63 L253 73"
-        stroke="rgba(107,158,120,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+        stroke="rgba(87,90,74,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
         fill="none"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ delay: 1.05 }}
@@ -210,7 +210,7 @@ function ConstrucaoIll() {
       {/* Leaf */}
       <motion.path
         d="M276 44 C273 34 265 29 257 31 C245 34 241 48 253 52 C256 53 259 53 261 51 L276 44Z"
-        fill="rgba(107,158,120,0.28)" stroke="rgba(107,158,120,0.5)" strokeWidth="1.2"
+        fill="rgba(87,90,74,0.28)" stroke="rgba(87,90,74,0.5)" strokeWidth="1.2"
         initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
         style={{ transformOrigin: "260px 42px" }}
         transition={{ duration: 0.5, delay: 1.05 }}
@@ -223,15 +223,15 @@ function ConstrucaoIll() {
           style={{ transformOrigin: `${x}px ${y}px` }}
           transition={{ duration: 0.3, delay }}
         >
-          <line x1={x - 5} y1={y} x2={x + 5} y2={y} stroke="rgba(107,158,120,0.42)" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1={x} y1={y - 5} x2={x} y2={y + 5} stroke="rgba(107,158,120,0.42)" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1={x - 5} y1={y} x2={x + 5} y2={y} stroke="rgba(87,90,74,0.42)" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1={x} y1={y - 5} x2={x} y2={y + 5} stroke="rgba(87,90,74,0.42)" strokeWidth="1.5" strokeLinecap="round" />
         </motion.g>
       ))}
 
       {/* Dots on block edges */}
       {([[58, 201], [88, 162], [118, 123], [148, 84]] as const).map(([cx, cy], i) => (
         <motion.circle key={i} cx={cx} cy={cy} r={3}
-          fill="rgba(107,158,120,0.5)"
+          fill="rgba(87,90,74,0.5)"
           initial={{ scale: 0 }} animate={{ scale: 1 }}
           transition={{ delay: 0.3 + i * 0.15 }}
         />
@@ -247,27 +247,27 @@ const steps = [
     num: "01",
     title: "Escuta",
     text: "A gente começa entendendo sua história, seu momento e o que tem ocupado espaço dentro de você.",
-    numColor: "rgba(139,109,196,0.18)",
+    numColor: "rgba(150,120,90,0.18)",
     accent: "var(--color-purple)",
-    illBg: "rgba(247,243,253,0.5)",
+    illBg: "rgba(250,247,242,0.5)",
     ill: <EscutaIll />,
   },
   {
     num: "02",
     title: "Compreensão",
     text: "Aos poucos, damos nome ao que estava confuso: padrões, emoções e questões que pedem um olhar mais atento.",
-    numColor: "rgba(196,170,223,0.22)",
+    numColor: "rgba(196,162,130,0.22)",
     accent: "var(--color-purple-deep)",
-    illBg: "rgba(238,230,248,0.45)",
+    illBg: "rgba(240,233,220,0.45)",
     ill: <CompreensaoIll />,
   },
   {
     num: "03",
     title: "Construção",
     text: "Você desenvolve recursos pra lidar com os desafios de um jeito mais saudável — e mais seu.",
-    numColor: "rgba(107,158,120,0.18)",
+    numColor: "rgba(87,90,74,0.18)",
     accent: "var(--color-sage)",
-    illBg: "rgba(216,238,224,0.4)",
+    illBg: "rgba(200,220,190,0.4)",
     ill: <ConstrucaoIll />,
   },
 ] as const;
@@ -317,15 +317,15 @@ export default function HowItWorks() {
             position: "relative",
             borderRadius: 28,
             overflow: "hidden",
-            boxShadow: "0 20px 60px rgba(90,60,150,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
+            boxShadow: "0 20px 60px rgba(80,70,50,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
           }}
         >
-          <BorderBeam duration={11} colorCenter="rgba(139,109,196,0.6)" colorTo="rgba(107,158,120,0.45)" />
+          <BorderBeam duration={11} colorCenter="rgba(150,120,90,0.6)" colorTo="rgba(87,90,74,0.45)" />
 
           <div className="mob-stack" style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            background: "linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(247,243,253,0.86) 100%)",
+            background: "linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(250,247,242,0.86) 100%)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
             border: "1px solid rgba(255,255,255,0.78)",
@@ -371,7 +371,7 @@ export default function HowItWorks() {
                       display: "inline-flex", alignItems: "center", gap: ".4rem",
                       padding: ".38rem .85rem",
                       borderRadius: 999, border: "none", cursor: "pointer",
-                      background: i === step ? "var(--color-purple)" : "rgba(139,109,196,0.09)",
+                      background: i === step ? "var(--color-purple)" : "rgba(150,120,90,0.09)",
                       color: i === step ? "#fff" : "var(--color-brand-soft)",
                       fontSize: ".78rem", fontWeight: 600, letterSpacing: ".04em",
                       transition: "background .3s, color .3s",
@@ -394,7 +394,7 @@ export default function HowItWorks() {
               animate={{ background: current.illBg }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
               style={{
-                borderLeft: "1px solid rgba(139,109,196,0.08)",
+                borderLeft: "1px solid rgba(150,120,90,0.08)",
                 padding: "2rem",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 overflow: "hidden", position: "relative", height: 360,
@@ -403,7 +403,7 @@ export default function HowItWorks() {
               {/* Faint grid dots */}
               <div style={{
                 position: "absolute", inset: 0,
-                backgroundImage: "radial-gradient(circle, rgba(139,109,196,0.1) 1px, transparent 1px)",
+                backgroundImage: "radial-gradient(circle, rgba(150,120,90,0.1) 1px, transparent 1px)",
                 backgroundSize: "22px 22px",
                 pointerEvents: "none",
               }} />

@@ -33,9 +33,9 @@ function RotatingTension({ items, visible }: { items: string[]; visible: boolean
         borderRadius: 20,
         marginBottom: ".9rem",
         overflow: "hidden",
-        boxShadow: "0 4px 24px rgba(139,109,196,.07), inset 0 1px 0 rgba(255,255,255,.9)",
+        boxShadow: "0 4px 24px rgba(150,120,90,.07), inset 0 1px 0 rgba(255,255,255,.9)",
       }}>
-        <BorderBeam duration={10} colorCenter="rgba(139,109,196,0.7)" colorTo="rgba(107,158,120,0.5)" />
+        <BorderBeam duration={10} colorCenter="rgba(150,120,90,0.7)" colorTo="rgba(87,90,74,0.5)" />
         <AnimatePresence mode="wait">
           <motion.p
             key={index}
@@ -60,7 +60,7 @@ function RotatingTension({ items, visible }: { items: string[]; visible: boolean
             style={{
               width: i === index ? 22 : 7, height: 7,
               borderRadius: 999, border: "none", padding: 0, cursor: "pointer",
-              background: i === index ? "var(--color-purple)" : "rgba(139,109,196,.22)",
+              background: i === index ? "var(--color-purple)" : "rgba(150,120,90,.22)",
               transition: "width .3s ease, background .3s ease",
             }}
           />
@@ -112,7 +112,7 @@ export default function Identification() {
                 position: "absolute",
                 bottom: "10%", left: "-1.4rem",
                 width: 80, height: 80,
-                backgroundImage: "radial-gradient(circle, rgba(139,109,196,.35) 1.5px, transparent 1.5px)",
+                backgroundImage: "radial-gradient(circle, rgba(150,120,90,.35) 1.5px, transparent 1.5px)",
                 backgroundSize: "10px 10px",
                 pointerEvents: "none",
               }}

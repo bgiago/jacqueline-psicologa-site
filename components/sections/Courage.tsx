@@ -25,7 +25,7 @@ export default function Courage() {
       >
         <div style={{
           position: "absolute", inset: 0,
-          background: "radial-gradient(ellipse 70% 60% at 40% 50%, rgba(139,109,196,.14) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 70% 60% at 40% 50%, rgba(150,120,90,.14) 0%, transparent 70%)",
         }} />
       </motion.div>
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Jacqueline Borges — Psicóloga Clínica | Atendimento online",
   description:
-    "Psicóloga clínica para mulheres que vivem entre cobranças e silêncios. Um espaço de escuta e acolhimento — atendimento online, com possibilidade de presencial por combinação. Conversa inicial pelo WhatsApp.",
+    "Psicóloga clínica especializada em saúde emocional e autoconhecimento. Um espaço de escuta e acolhimento — atendimento online para todo o Brasil, com presencial em Araruama e Rio das Ostras, RJ. Conversa inicial pelo WhatsApp.",
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jacqueline Borges — Psicóloga Clínica",
     description:
-      "Um espaço de escuta e acolhimento para mulheres que vivem entre cobranças e silêncios.",
+      "Um espaço de escuta e acolhimento para quem vive entre cobranças e silêncios. Online para todo o Brasil · Presencial em Araruama e Rio das Ostras, RJ.",
     locale: "pt_BR",
     type: "website",
     images: [

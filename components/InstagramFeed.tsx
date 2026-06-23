@@ -37,7 +37,7 @@ export default function InstagramFeed() {
       <div style={{
         position: "absolute", top: "-15%", left: "-5%",
         width: "40%", height: "45%",
-        background: "radial-gradient(ellipse, rgba(139,109,196,.10) 0%, transparent 65%)",
+        background: "radial-gradient(ellipse, rgba(150,120,90,.10) 0%, transparent 65%)",
         borderRadius: "50%", pointerEvents: "none",
       }} />
 
@@ -72,8 +72,8 @@ export default function InstagramFeed() {
             background: "rgba(255,255,255,0.55)",
             backdropFilter: "blur(14px)",
             WebkitBackdropFilter: "blur(14px)",
-            border: "1px solid rgba(139,109,196,0.14)",
-            boxShadow: "0 8px 40px rgba(90,60,150,.08)",
+            border: "1px solid rgba(150,120,90,0.14)",
+            boxShadow: "0 8px 40px rgba(80,70,50,.08)",
             padding: "clamp(1.2rem, 3vw, 2rem)",
           }}
         >

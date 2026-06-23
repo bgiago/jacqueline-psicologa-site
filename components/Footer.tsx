@@ -10,14 +10,14 @@ const links = [
 const info = [
   "Jacqueline Borges",
   "Psicóloga Clínica · CRP 05/85378",
-  "Araruama, RJ",
+  "Araruama e Rio das Ostras, RJ",
 ];
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--gradient-dark)", color: "rgba(192,174,223,.75)", padding: "clamp(3.5rem,7vw,5.5rem) 0 2.5rem", position: "relative", overflow: "hidden" }}>
+    <footer style={{ background: "var(--gradient-dark)", color: "rgba(210,195,175,.75)", padding: "clamp(3.5rem,7vw,5.5rem) 0 2.5rem", position: "relative", overflow: "hidden" }}>
       {/* Subtle aurora */}
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(139,109,196,.08) 0%, transparent 70%)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(150,120,90,.08) 0%, transparent 70%)", pointerEvents: "none" }} />
 
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: "2.5rem", alignItems: "start" }}>
@@ -26,7 +26,7 @@ export default function Footer() {
               Jacqueline{" "}
               <span style={{ color: "var(--color-purple-lt)", fontStyle: "italic" }}>Borges</span>
             </div>
-            <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "1.15rem", color: "#C4B0E2", maxWidth: "26ch", lineHeight: 1.45, margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "1.15rem", color: "#C4A07E", maxWidth: "26ch", lineHeight: 1.45, margin: 0 }}>
               Um espaço de escuta acolhedora, ética e comprometida com o seu processo.
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer-bottom" style={{ borderTop: "1px solid rgba(255,255,255,.08)", marginTop: "2.8rem", paddingTop: "1.5rem", fontSize: ".78rem", color: "rgba(192,174,223,.4)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: ".6rem" }}>
+        <div className="footer-bottom" style={{ borderTop: "1px solid rgba(255,255,255,.08)", marginTop: "2.8rem", paddingTop: "1.5rem", fontSize: ".78rem", color: "rgba(210,195,175,.4)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: ".6rem" }}>
           <span>© {new Date().getFullYear()} Jacqueline Borges. Todos os direitos reservados.</span>
           <span>Atendimento para adolescentes, adultos e idosos.</span>
         </div>

@@ -54,8 +54,8 @@ export default function Reflections() {
         ) : (
           <div style={{
             textAlign: "center", padding: "3rem",
-            background: "rgba(139,109,196,0.06)", borderRadius: 20,
-            border: "1px dashed rgba(139,109,196,0.25)",
+            background: "rgba(150,120,90,0.06)", borderRadius: 20,
+            border: "1px dashed rgba(150,120,90,0.25)",
           }}>
             <p style={{ color: "var(--color-brand-muted)", fontSize: ".9rem" }}>
               Configure <code>NEXT_PUBLIC_BEHOLD_FEED_ID</code> no <code>.env.local</code> para exibir o feed.

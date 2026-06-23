@@ -34,7 +34,7 @@ export default function MobileCarousel({ children }: Props) {
               onClick={() => setActive(i)}
               animate={{
                 width: i === active ? 24 : 8,
-                background: i === active ? "var(--color-purple)" : "rgba(139,109,196,.28)",
+                background: i === active ? "var(--color-purple)" : "rgba(150,120,90,.28)",
               }}
               transition={{ duration: 0.25 }}
               style={{ height: 8, borderRadius: 999, border: "none", cursor: "pointer", padding: 0, outline: "none" }}

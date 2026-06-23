@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 const faqs = [
   { q: "Terapia é só pra quem está em crise?", a: "Não. A terapia também é um espaço pra se conhecer, refletir e cuidar de você antes que o peso aperte." },
   { q: "Como funciona o primeiro contato?", a: "Você me chama no WhatsApp e a gente conversa rápido pra entender o seu momento e ver o melhor caminho pra começar." },
-  { q: "É online ou presencial?", a: "A preferência é pelo online — funciona muito bem e você atende de onde estiver. O presencial pode ser combinado dependendo da proximidade." },
+  { q: "É online ou presencial?", a: "Atendo online para todo o Brasil — funciona muito bem de onde você estiver. Para o presencial, o atendimento é em Araruama e Rio das Ostras, RJ." },
   { q: "Preciso saber explicar o que estou sentindo pra marcar?", a: "Não precisa chegar com tudo organizado. Pode chegar do jeito que você está — a gente organiza junto." },
   { q: "Nunca fiz terapia. Tem problema?", a: "Nenhum. A primeira conversa serve justamente pra isso: começar sem pressão." },
   { q: "Quanto tempo dura cada sessão?", a: "Cada sessão tem duração de 50 minutos, com frequência semanal." },

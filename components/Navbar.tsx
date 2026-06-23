@@ -37,11 +37,11 @@ export default function Navbar() {
         right: "1rem",
         zIndex: 50,
         borderRadius: open ? "14px 14px 0 0" : 14,
-        background: visible ? "rgba(247,243,253,0.9)" : "transparent",
+        background: visible ? "rgba(250,247,242,0.9)" : "transparent",
         backdropFilter: visible ? "blur(12px) saturate(1.4)" : "none",
         WebkitBackdropFilter: visible ? "blur(12px) saturate(1.4)" : "none",
         border: visible ? "1px solid rgba(255,255,255,0.72)" : "1px solid transparent",
-        boxShadow: visible ? "0 4px 28px rgba(90,60,150,.10)" : "none",
+        boxShadow: visible ? "0 4px 28px rgba(80,70,50,.10)" : "none",
         padding: "0.7rem 0",
         transition:
           "background .4s ease, border-color .4s ease, box-shadow .4s ease, border-radius .3s ease, backdrop-filter .4s ease, -webkit-backdrop-filter .4s ease",
@@ -84,9 +84,9 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: "easeInOut" }}
             style={{
               overflow: "hidden",
-              background: "rgba(247,243,253,.96)",
+              background: "rgba(250,247,242,.96)",
               backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)",
-              borderTop: "1px solid rgba(139,109,196,.1)",
+              borderTop: "1px solid rgba(150,120,90,.1)",
               borderRadius: "0 0 14px 14px",
             }}
           >

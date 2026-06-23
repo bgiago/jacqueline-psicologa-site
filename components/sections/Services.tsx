@@ -12,13 +12,13 @@ const services = [
   {
     icon: <><rect x="2" y="4" width="20" height="14" rx="2" /><path d="M8 21h8M12 18v3" /></>,
     title: "Online",
-    text: "Acolhimento de onde você estiver, com o mesmo cuidado do presencial.",
+    text: "Atendimento para todo o Brasil, de onde você estiver, com o mesmo cuidado do presencial.",
     tag: "Online",
   },
   {
     icon: <><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></>,
     title: "Presencial",
-    text: "Para quem prefere o encontro ao vivo — pode ser combinado conforme disponibilidade e proximidade.",
+    text: "Para quem prefere o encontro ao vivo — atendimento em Araruama e Rio das Ostras, RJ.",
     tag: "Sob consulta",
   },
 ];
@@ -44,7 +44,7 @@ function ServiceCard({ s, i }: { s: typeof services[0]; i: number }) {
     >
       <div style={{
         width: 48, height: 48, borderRadius: 14,
-        background: "rgba(107,158,120,.18)", border: "1px solid rgba(107,158,120,.25)",
+        background: "rgba(87,90,74,.18)", border: "1px solid rgba(87,90,74,.25)",
         display: "flex", alignItems: "center", justifyContent: "center",
         marginBottom: "1.4rem",
       }}>
@@ -55,13 +55,13 @@ function ServiceCard({ s, i }: { s: typeof services[0]; i: number }) {
       <div style={{
         display: "inline-block", fontSize: ".65rem", letterSpacing: ".2em",
         textTransform: "uppercase", color: "var(--color-sage-lt)", fontWeight: 600,
-        padding: ".2rem .7rem", background: "rgba(107,158,120,.12)",
+        padding: ".2rem .7rem", background: "rgba(87,90,74,.12)",
         borderRadius: 999, marginBottom: "1rem",
       }}>
         {s.tag}
       </div>
-      <h3 style={{ fontSize: "1.3rem", color: "#F0E8FC", marginBottom: ".6rem" }}>{s.title}</h3>
-      <p style={{ color: "rgba(192,174,223,.75)", fontSize: ".98rem", lineHeight: 1.7, margin: 0 }}>{s.text}</p>
+      <h3 style={{ fontSize: "1.3rem", color: "#F5F0E8", marginBottom: ".6rem" }}>{s.title}</h3>
+      <p style={{ color: "rgba(210,195,175,.75)", fontSize: ".98rem", lineHeight: 1.7, margin: 0 }}>{s.text}</p>
     </motion.div>
   );
 }
@@ -85,7 +85,7 @@ export default function Services() {
           style={{
             position: "absolute", top: "-20%", right: "-10%",
             width: "50%", height: "50%",
-            background: "radial-gradient(ellipse, rgba(139,109,196,.18) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse, rgba(150,120,90,.18) 0%, transparent 70%)",
             borderRadius: "50%",
           }}
         />
@@ -95,7 +95,7 @@ export default function Services() {
           style={{
             position: "absolute", bottom: "-15%", left: "-5%",
             width: "35%", height: "40%",
-            background: "radial-gradient(ellipse, rgba(107,158,120,.14) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse, rgba(87,90,74,.14) 0%, transparent 70%)",
             borderRadius: "50%",
           }}
         />
@@ -110,10 +110,10 @@ export default function Services() {
           style={{ marginBottom: "3.5rem", textAlign: "center" }}
         >
           <span className="eyebrow" style={{ color: "var(--color-sage-lt)" }}>Atendimento</span>
-          <h2 style={{ fontSize: "clamp(2rem,4vw,3.2rem)", marginTop: ".7rem", color: "#F0E8FC" }}>
+          <h2 style={{ fontSize: "clamp(2rem,4vw,3.2rem)", marginTop: ".7rem", color: "#F5F0E8" }}>
             Formas de <em>atendimento</em>
           </h2>
-          <p style={{ color: "rgba(192,174,223,.7)", maxWidth: "50ch", margin: ".9rem auto 0", fontSize: "1.04rem" }}>
+          <p style={{ color: "rgba(210,195,175,.7)", maxWidth: "50ch", margin: ".9rem auto 0", fontSize: "1.04rem" }}>
             Cada encontro é inteiramente seu — de onde você estiver.
           </p>
         </motion.div>
@@ -138,7 +138,7 @@ export default function Services() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          style={{ textAlign: "center", margin: "2rem auto 0", color: "rgba(192,174,223,.5)", fontSize: ".88rem", letterSpacing: ".04em" }}
+          style={{ textAlign: "center", margin: "2rem auto 0", color: "rgba(210,195,175,.5)", fontSize: ".88rem", letterSpacing: ".04em" }}
         >
           Atendimento para adolescentes, adultos e idosos.
         </motion.p>

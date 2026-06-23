@@ -54,13 +54,13 @@ function Card({ icon, text, index }: { icon: React.ReactNode; text: string; inde
       style={{
         padding: "2rem 1.8rem",
         background: hovered
-          ? "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(234,224,250,0.75))"
+          ? "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(237,224,207,0.75))"
           : "rgba(255,255,255,0.75)",
         backdropFilter: "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
-        border: hovered ? "1px solid rgba(139,109,196,.3)" : "1px solid rgba(255,255,255,0.7)",
+        border: hovered ? "1px solid rgba(150,120,90,.3)" : "1px solid rgba(255,255,255,0.7)",
         borderRadius: 20,
-        boxShadow: hovered ? "0 20px 50px rgba(90,60,150,.16)" : "0 8px 30px rgba(90,60,150,.08)",
+        boxShadow: hovered ? "0 20px 50px rgba(80,70,50,.16)" : "0 8px 30px rgba(80,70,50,.08)",
         cursor: "default",
         transition: "background .3s, border .3s, box-shadow .3s",
       }}
@@ -87,7 +87,7 @@ export default function MirrorCards() {
       <div style={{
         position: "absolute", top: "-20%", right: "-10%",
         width: "60%", height: "60%",
-        background: "radial-gradient(ellipse, rgba(196,170,223,.18) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse, rgba(196,162,130,.18) 0%, transparent 70%)",
         borderRadius: "50%", pointerEvents: "none",
       }} />
 

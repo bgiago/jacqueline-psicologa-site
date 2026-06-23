@@ -70,16 +70,15 @@ export default function Hero() {
               background: "rgba(255,255,255,0.8)",
               backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
               border: "1px solid rgba(255,255,255,0.7)", borderRadius: 999,
-              boxShadow: "0 4px 18px rgba(90,60,150,.09)",
+              boxShadow: "0 4px 18px rgba(80,70,50,.09)",
               fontSize: ".76rem", color: "var(--color-brand-muted)", fontWeight: 500,
-              whiteSpace: "nowrap",
             }}
           >
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(107,158,120,.22)" }} />
-            Atendimento online · Araruama, RJ
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(87,90,74,.22)" }} />
+            Online · todo o Brasil · Presencial · Araruama e Rio das Ostras, RJ
           </motion.span>
 
-          <span className="hero-badge-divider" style={{ width: 1, height: 13, background: "rgba(139,109,196,.3)", borderRadius: 1, flexShrink: 0 }} />
+          <span className="hero-badge-divider" style={{ width: 1, height: 13, background: "rgba(150,120,90,.3)", borderRadius: 1, flexShrink: 0 }} />
 
           <motion.span
             initial={{ opacity: 0 }}

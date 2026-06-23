@@ -16,7 +16,7 @@ const contactInfo = [
   },
   {
     icon: <><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></>,
-    label: "Araruama, RJ",
+    label: "Araruama e Rio das Ostras, RJ",
     href: null,
   },
 ];
@@ -27,7 +27,7 @@ export default function Contact() {
   return (
     <section id="contato" style={{ padding: "clamp(5rem,10vw,8rem) 0", background: "var(--color-bg)", position: "relative", overflow: "hidden" }}>
       {/* Background orb */}
-      <div style={{ position: "absolute", bottom: "-20%", right: "-10%", width: "40%", height: "50%", background: "radial-gradient(ellipse, rgba(107,158,120,.12) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", bottom: "-20%", right: "-10%", width: "40%", height: "50%", background: "radial-gradient(ellipse, rgba(87,90,74,.12) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "clamp(2rem,5vw,4rem)", alignItems: "stretch" }}>
@@ -55,14 +55,14 @@ export default function Contact() {
             <div style={{
               background: "linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 100%)",
               borderRadius: 20, padding: "1.8rem 1.8rem 2rem",
-              boxShadow: "0 12px 40px rgba(30,21,48,.18)",
+              boxShadow: "0 12px 40px rgba(26,28,18,.18)",
               position: "relative", overflow: "hidden",
             }}>
-              <div style={{ position: "absolute", top: "-20%", right: "-15%", width: 120, height: 120, background: "radial-gradient(ellipse, rgba(139,109,196,.25) 0%, transparent 70%)", borderRadius: "50%" }} />
-              <h3 style={{ fontSize: "1.25rem", color: "#F0E8FC", marginBottom: ".6rem", position: "relative" }}>
+              <div style={{ position: "absolute", top: "-20%", right: "-15%", width: 120, height: 120, background: "radial-gradient(ellipse, rgba(150,120,90,.25) 0%, transparent 70%)", borderRadius: "50%" }} />
+              <h3 style={{ fontSize: "1.25rem", color: "#F5F0E8", marginBottom: ".6rem", position: "relative" }}>
                 Prefere falar agora?
               </h3>
-              <p style={{ color: "rgba(192,174,223,.7)", fontSize: ".95rem", lineHeight: 1.6, position: "relative" }}>
+              <p style={{ color: "rgba(210,195,175,.7)", fontSize: ".95rem", lineHeight: 1.6, position: "relative" }}>
                 Me chama direto no WhatsApp — a primeira conversa é tranquila.
               </p>
               <motion.a
@@ -87,7 +87,7 @@ export default function Contact() {
               background: "rgba(255,255,255,0.75)", backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
               border: "1px solid rgba(255,255,255,0.7)", borderRadius: 20,
               padding: "1.6rem 1.8rem",
-              boxShadow: "0 8px 28px rgba(90,60,150,.07)",
+              boxShadow: "0 8px 28px rgba(80,70,50,.07)",
             }}>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {contactInfo.map((item) => (
@@ -123,7 +123,7 @@ export default function Contact() {
               background: "rgba(255,255,255,0.8)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
               border: "1px solid rgba(255,255,255,0.75)", borderRadius: 22,
               padding: "clamp(1.8rem,4vw,2.8rem)",
-              boxShadow: "0 12px 40px rgba(90,60,150,.08)",
+              boxShadow: "0 12px 40px rgba(80,70,50,.08)",
               display: "flex", flexDirection: "column",
             }}
           >

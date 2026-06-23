@@ -20,12 +20,12 @@ export default function LeadCapture() {
             backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
             border: "1px solid rgba(255,255,255,0.75)",
             borderRadius: 24, padding: "clamp(2rem,4vw,3rem)",
-            boxShadow: "0 16px 50px rgba(90,60,150,.09), 0 1px 0 rgba(255,255,255,.9) inset",
+            boxShadow: "0 16px 50px rgba(80,70,50,.09), 0 1px 0 rgba(255,255,255,.9) inset",
             position: "relative", overflow: "hidden",
           }}
         >
           {/* Decorative bg */}
-          <div style={{ position: "absolute", top: "-30%", right: "5%", width: 280, height: 280, background: "radial-gradient(ellipse, rgba(196,170,223,.2) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", top: "-30%", right: "5%", width: 280, height: 280, background: "radial-gradient(ellipse, rgba(196,162,130,.2) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
           <div style={{ position: "relative", zIndex: 1 }}>
             <span className="eyebrow">Sem pressa</span>
