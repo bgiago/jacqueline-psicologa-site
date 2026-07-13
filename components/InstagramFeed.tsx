@@ -75,9 +75,21 @@ export default function InstagramFeed() {
             border: "1px solid rgba(150,120,90,0.14)",
             boxShadow: "0 8px 40px rgba(80,70,50,.08)",
             padding: "clamp(1.2rem, 3vw, 2rem)",
+            minHeight: "400px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <behold-widget feed-id={FEED_ID} />
+          {FEED_ID ? (
+            <behold-widget feed-id={FEED_ID} />
+          ) : (
+            <div style={{ textAlign: "center", color: "var(--color-brand-muted)" }}>
+              <p style={{ fontSize: "1rem", margin: 0 }}>
+                Carregando feed do Instagram...
+              </p>
+            </div>
+          )}
         </motion.div>
 
         {/* CTA */}

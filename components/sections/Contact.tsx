@@ -161,7 +161,7 @@ export default function Contact() {
 
                   <label style={{ display: "flex", gap: ".6rem", alignItems: "flex-start", fontSize: ".78rem", color: "var(--color-brand-muted)", margin: ".3rem 0 1.2rem", cursor: "pointer" }}>
                     <input type="checkbox" required style={{ width: 16, height: 16, flexShrink: 0, marginTop: ".2rem", accentColor: "var(--color-purple)" }} />
-                    Autorizo o contato e concordo com a Política de Privacidade.
+                    Autorizo o contato e concordo com a <a href="/privacidade" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-purple)", fontWeight: 500 }}>Política de Privacidade</a>.
                   </label>
 
                   <motion.button

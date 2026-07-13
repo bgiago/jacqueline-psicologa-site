@@ -55,7 +55,7 @@ export default function Footer() {
                 <li key={i} style={{ opacity: .75 }}>{i}</li>
               ))}
               <li>
-                <a href="#" className="footer-link">Política de Privacidade</a>
+                <a href="/privacidade" className="footer-link">Política de Privacidade</a>
               </li>
             </ul>
           </div>
