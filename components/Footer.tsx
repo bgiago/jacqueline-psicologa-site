@@ -1,4 +1,5 @@
 ﻿"use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const links = [
@@ -22,10 +23,7 @@ export default function Footer() {
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: "2.5rem", alignItems: "start" }}>
           <div>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-bg)", marginBottom: ".9rem" }}>
-              Jacqueline{" "}
-              <span style={{ color: "var(--color-purple-lt)", fontStyle: "italic" }}>Borges</span>
-            </div>
+            <Image src="/logo-footer-white.webp" alt="Jac Borges — Psicóloga" width={480} height={599} style={{ width: 108, height: "auto", marginBottom: "1.2rem" }} />
             <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "1.15rem", color: "#C4A07E", maxWidth: "26ch", lineHeight: 1.45, margin: 0 }}>
               Um espaço de escuta acolhedora, ética e comprometida com o seu processo.
             </p>

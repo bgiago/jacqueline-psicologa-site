@@ -22,10 +22,6 @@ export const metadata: Metadata = {
   title: "Jacqueline Borges — Psicóloga Clínica | Atendimento online",
   description:
     "Psicóloga clínica especializada em saúde emocional e autoconhecimento. Um espaço de escuta e acolhimento — atendimento online para todo o Brasil, com presencial em Araruama e Rio das Ostras, RJ. Conversa inicial pelo WhatsApp.",
-  icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-  },
   openGraph: {
     title: "Jacqueline Borges — Psicóloga Clínica",
     description:

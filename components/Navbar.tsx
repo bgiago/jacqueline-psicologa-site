@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { WA_DEFAULT } from "@/lib/constants";
 
@@ -48,7 +49,8 @@ export default function Navbar() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 clamp(1rem, 2.5vw, 1.8rem)" }}>
-        <a href="#" style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-brand)" }}>
+        <a href="#" style={{ display: "flex", alignItems: "center", gap: ".6rem", fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-brand)" }}>
+          <Image src="/logo-mark.webp" alt="" width={34} height={34} priority style={{ display: "block" }} />
           Jacqueline <span style={{ color: "var(--color-purple)", fontStyle: "italic" }}>Borges</span>
         </a>
 
