@@ -1,6 +1,5 @@
 ﻿"use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const links = [
   { href: "https://wa.me/5522992659191", label: "WhatsApp (22) 99265-9191" },

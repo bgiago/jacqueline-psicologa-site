@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade — Jacqueline Borges",
@@ -17,7 +18,7 @@ export default function Privacidade() {
           <section style={{ marginBottom: "2.5rem" }}>
             <h2>1. Introdução</h2>
             <p>
-              Jacqueline Borges ("nós", "nosso" ou "Jacqueline") opera o site jacquelineborges.com.br ("Serviço").
+              Jacqueline Borges (“nós”, “nosso” ou “Jacqueline”) opera o site jacquelineborges.com.br (“Serviço”).
             </p>
             <p>
               Esta página informa você sobre nossas políticas de privacidade e como tratamos seus dados pessoais quando você visita nosso site e/ou nos contata.
@@ -111,7 +112,7 @@ export default function Privacidade() {
             <ul style={{ marginLeft: "1.5rem", marginBottom: "1rem" }}>
               <li><strong>Acessar</strong> seus dados pessoais</li>
               <li><strong>Corrigir</strong> dados incorretos ou incompletos</li>
-              <li><strong>Deletar</strong> seus dados ("direito ao esquecimento")</li>
+              <li><strong>Deletar</strong> seus dados (“direito ao esquecimento”)</li>
               <li><strong>Portabilidade:</strong> Receber dados em formato estruturado</li>
               <li><strong>Revogar Consentimento:</strong> A qualquer momento</li>
               <li><strong>Oposição:</strong> Ao processamento de dados para fins específicos</li>
@@ -205,7 +206,7 @@ export default function Privacidade() {
         {/* Footer link */}
         <div style={{ marginTop: "4rem", paddingTop: "2rem", borderTop: "1px solid var(--color-line)", textAlign: "center", color: "var(--color-brand-muted)", fontSize: "0.9rem" }}>
           <p>
-            <a href="/" style={{ color: "var(--color-purple)" }}>← Voltar para homepage</a>
+            <Link href="/" style={{ color: "var(--color-purple)" }}>← Voltar para homepage</Link>
           </p>
         </div>
       </div>

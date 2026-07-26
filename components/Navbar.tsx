@@ -50,8 +50,10 @@ export default function Navbar() {
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 clamp(1rem, 2.5vw, 1.8rem)" }}>
         <a href="#" style={{ display: "flex", alignItems: "center", gap: ".6rem", fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--color-brand)" }}>
-          <Image src="/logo-mark.webp" alt="" width={34} height={34} priority style={{ display: "block" }} />
-          Jacqueline <span style={{ color: "var(--color-purple)", fontStyle: "italic" }}>Borges</span>
+          <Image src="/logo-mark.webp" alt="Jacqueline Borges" width={34} height={34} priority style={{ display: "block" }} />
+          <span style={{ display: "none" }}>
+            Jacqueline <span style={{ color: "var(--color-purple)", fontStyle: "italic" }}>Borges</span>
+          </span>
         </a>
 
         <nav className="desk-only" style={{ display: "flex", alignItems: "center", gap: "2.2rem" }}>

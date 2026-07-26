@@ -2,16 +2,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "behold-widget": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        "feed-id": string;
-      };
-    }
-  }
-}
-
 const FEED_ID = "SlfJGliHwJrCvNUEiGzP";
 
 export default function InstagramFeed() {

@@ -417,7 +417,7 @@ export default function HowItWorks() {
                   transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                   style={{ width: "100%", maxHeight: 260, position: "relative", zIndex: 1 }}
                 >
-                  {current.ill}
+                  <div className="how-ill-shift">{current.ill}</div>
                 </motion.div>
               </AnimatePresence>
             </motion.div>

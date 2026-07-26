@@ -130,7 +130,7 @@ export default function About() {
               }}
             >
               <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "1rem", color: "var(--color-brand)", margin: 0, lineHeight: 1.4 }}>
-                "Ninguém precisa guardar tudo sozinho."
+                “Ninguém precisa guardar tudo sozinho.”
               </p>
             </motion.div>
 

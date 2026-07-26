@@ -52,34 +52,14 @@ export default function Hero() {
           zIndex: 2,
         }}
       >
-        {/* Badge + CRP */}
+        {/* CRP badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.15 }}
-          className="hero-badge-row hero-badge-wrap"
+          className="hero-badge-wrap"
           style={{ display: "flex", alignItems: "center", gap: ".7rem", marginBottom: "2rem" }}
         >
-          <motion.span
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.2, ease: [0.34, 1.2, 0.64, 1] }}
-            style={{
-              display: "inline-flex", alignItems: "center", gap: ".5rem",
-              padding: ".4rem .9rem",
-              background: "rgba(255,255,255,0.8)",
-              backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-              border: "1px solid rgba(255,255,255,0.7)", borderRadius: 999,
-              boxShadow: "0 4px 18px rgba(80,70,50,.09)",
-              fontSize: ".76rem", color: "var(--color-brand-muted)", fontWeight: 500,
-            }}
-          >
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-sage)", flexShrink: 0, boxShadow: "0 0 0 3px rgba(87,90,74,.22)" }} />
-            Online · todo o Brasil · Presencial · Araruama e Rio das Ostras, RJ
-          </motion.span>
-
-          <span className="hero-badge-divider" style={{ width: 1, height: 13, background: "rgba(150,120,90,.3)", borderRadius: 1, flexShrink: 0 }} />
-
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
